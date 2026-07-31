@@ -53,9 +53,33 @@ export const useSessionStore = defineStore('session', () => {
   const errorMessage = ref<string | null>(null)
   const health = ref<HealthInfo | null>(null)
   const activeArtifact = ref<Artifact | null>(null)
+  const artifacts = ref<Artifact[]>([])
+  const isArtifactPanelOpen = ref(true)
 
   const activeProvider = computed(() => activeSession.value?.llm_provider || 'openai')
   const activeModel = computed(() => activeSession.value?.llm_model || 'gpt-4o-mini')
+
+  function addArtifact(art: Artifact) {
+    const idx = artifacts.value.findIndex(a => a.id === art.id)
+    if (idx !== -1) {
+      artifacts.value[idx] = art
+    } else {
+      artifacts.value.push(art)
+    }
+    activeArtifact.value = art
+    isArtifactPanelOpen.value = true
+  }
+
+  function selectArtifact(id: string) {
+    const found = artifacts.value.find(a => a.id === id)
+    if (found) {
+      activeArtifact.value = found
+    }
+  }
+
+  function toggleArtifactPanel() {
+    isArtifactPanelOpen.value = !isArtifactPanelOpen.value
+  }
 
   async function checkHealth() {
     try {
@@ -234,7 +258,7 @@ export const useSessionStore = defineStore('session', () => {
               if (currentEvent === 'message_delta') {
                 assistantMsg.content += parsed.content || ''
               } else if (currentEvent === 'artifact_created') {
-                activeArtifact.value = parsed
+                addArtifact(parsed)
               } else if (currentEvent === 'error') {
                 errorMessage.value = parsed.message
                 assistantMsg.error = parsed.message
@@ -266,6 +290,8 @@ export const useSessionStore = defineStore('session', () => {
     errorMessage,
     health,
     activeArtifact,
+    artifacts,
+    isArtifactPanelOpen,
     activeProvider,
     activeModel,
     checkHealth,
@@ -273,6 +299,9 @@ export const useSessionStore = defineStore('session', () => {
     selectSession,
     createSession,
     updateConfig,
-    sendMessage
+    sendMessage,
+    addArtifact,
+    selectArtifact,
+    toggleArtifactPanel
   }
 })
