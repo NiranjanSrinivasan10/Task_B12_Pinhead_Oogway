@@ -233,27 +233,30 @@ function handleCopy() {
 
 <style>
 /* Custom Markdown styling for rendered preview */
+/* Type scale: 3 clear steps at ~1.25 ratio — fixes [flat-type-hierarchy] */
 .markdown-body h1 {
-  font-size: 1.35rem;
+  font-size: 1.5rem;     /* step 3 */
   font-weight: 700;
   color: #f8fafc;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #1e293b;
   padding-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 .markdown-body h2 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #f1f5f9;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-.markdown-body h3 {
-  font-size: 1rem;
+  font-size: 1.25rem;    /* step 2 */
   font-weight: 600;
   color: #e2e8f0;
-  margin-top: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.markdown-body h3 {
+  font-size: 1rem;       /* step 1 — same as body, distinguished by weight */
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-top: 1rem;
   margin-bottom: 0.25rem;
 }
 .markdown-body p {
@@ -273,9 +276,11 @@ function handleCopy() {
 .markdown-body li {
   margin-bottom: 0.25rem;
 }
+/* [side-tab] fix: background treatment instead of thick accent border */
 .markdown-body blockquote {
-  border-left: 3px solid #6366f1;
-  padding-left: 1rem;
+  background-color: #111827;
+  border-radius: 0.375rem;
+  padding: 0.6rem 1rem;
   color: #94a3b8;
   font-style: italic;
   margin-bottom: 0.75rem;
@@ -284,25 +289,28 @@ function handleCopy() {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
-  font-size: 0.825rem;
+  font-size: 0.8rem;     /* base step */
 }
 .markdown-body th, .markdown-body td {
-  border: 1px solid #334155;
+  border: 1px solid #1e293b;
   padding: 0.5rem 0.75rem;
   text-align: left;
 }
 .markdown-body th {
-  background-color: #1e293b;
-  color: #f8fafc;
+  background-color: #0f172a;
+  color: #e2e8f0;
   font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .markdown-body code {
-  font-family: monospace;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
   background-color: #1e293b;
   color: #a5b4fc;
-  padding: 0.15rem 0.35rem;
-  rounded: 0.25rem;
-  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;     /* matches base step */
 }
 .markdown-body pre code {
   display: block;
