@@ -36,12 +36,20 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # ── Database (always required) ───────────────────────────────
+    # ── Database ─────────────────────────────────────────────────
     supabase_db_url: str = Field(
-        ...,
+        default="",
         description="Async Postgres connection string, e.g. "
         "postgresql+asyncpg://user:pass@host:5432/dbname",
     )
+
+    def require_db_url(self) -> str:
+        """Return the database URL or raise a clear error."""
+        if not self.supabase_db_url:
+            raise ValueError(
+                "SUPABASE_DB_URL is not set. Add it to backend/.env file."
+            )
+        return self.supabase_db_url
 
     # ── Cloud LLM keys (optional at startup, validated per-request) ──
     openai_api_key: str = Field(

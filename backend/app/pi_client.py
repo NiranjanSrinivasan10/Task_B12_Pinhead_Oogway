@@ -77,7 +77,7 @@ class PiClient:
             )
             # Read startup line
             if self._proc.stdout:
-                line = await asyncio.wait_for(self._proc.stdout.readline(), timeout=5.0)
+                line = await asyncio.wait_for(self._proc.stdout.readline(), timeout=10.0)
                 logger.info("Pi RPC startup output: %s", line.decode().strip())
             return self._proc
         except FileNotFoundError:
@@ -85,7 +85,15 @@ class PiClient:
                 "Node.js ('node') command not found. Ensure Node.js is installed and in PATH."
             )
         except Exception as exc:
-            raise PiRPCError(f"Failed to start Pi RPC subprocess: {exc}") from exc
+            stderr_out = ""
+            if self._proc and self._proc.stderr:
+                try:
+                    err_bytes = await self._proc.stderr.read()
+                    stderr_out = err_bytes.decode()
+                except Exception:
+                    pass
+            logger.error("Pi RPC process startup exception: %s | Stderr: %s", exc, stderr_out)
+            raise PiRPCError(f"Failed to start Pi RPC subprocess: {exc} {stderr_out}") from exc
 
     async def run_turn(
         self,
