@@ -1,0 +1,19 @@
+{
+  "name": "pi-runtime",
+  "version": "1.0.0",
+  "description": "Pi agent stdio RPC runtime for Lenny Growth Assistant",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@mariozechner/pi-agent-core": "^0.73.1",
+    "@mariozechner/pi-ai": "^0.73.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

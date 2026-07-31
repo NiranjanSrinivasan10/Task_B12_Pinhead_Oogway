@@ -3,8 +3,8 @@ backend/venv/
 __pycache__/
 *.pyc
 
-# Frontend
-frontend/vue-project/node_modules/
+# Node (covers frontend AND backend/pi-runtime)
+node_modules/
 frontend/vue-project/dist/
 
 # Secrets
