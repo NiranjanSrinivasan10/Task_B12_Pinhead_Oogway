@@ -1,0 +1,15 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Frontend
+frontend/vue-project/node_modules/
+frontend/vue-project/dist/
+
+# Secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
