@@ -1,0 +1,2646 @@
+event: message_delta
+data: {"content": "###"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "The"}
+
+event: message_delta
+data: {"content": " Importance"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " Customer"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": " Lo"}
+
+event: message_delta
+data: {"content": "ops"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " Product"}
+
+event: message_delta
+data: {"content": " Development"}
+
+event: message_delta
+data: {"content": "**\n\n"}
+
+event: message_delta
+data: {"content": "In"}
+
+event: message_delta
+data: {"content": " today's"}
+
+event: message_delta
+data: {"content": " fast"}
+
+event: message_delta
+data: {"content": "-paced"}
+
+event: message_delta
+data: {"content": " business"}
+
+event: message_delta
+data: {"content": " environment"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " understanding"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " isn't"}
+
+event: message_delta
+data: {"content": " just"}
+
+event: message_delta
+data: {"content": " an"}
+
+event: message_delta
+data: {"content": " advantage"}
+
+event: message_delta
+data: {"content": "\u2014"}
+
+event: message_delta
+data: {"content": "it's"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " necessity"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Customer"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " loops"}
+
+event: message_delta
+data: {"content": " are"}
+
+event: message_delta
+data: {"content": " crucial"}
+
+event: message_delta
+data: {"content": " mechanisms"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " empower"}
+
+event: message_delta
+data: {"content": " organizations"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " continually"}
+
+event: message_delta
+data: {"content": " refine"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " adapt"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " products"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " As"}
+
+event: message_delta
+data: {"content": " Pete"}
+
+event: message_delta
+data: {"content": " Kaz"}
+
+event: message_delta
+data: {"content": "anj"}
+
+event: message_delta
+data: {"content": "y"}
+
+event: message_delta
+data: {"content": " emphasizes"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " his"}
+
+event: message_delta
+data: {"content": " discussion"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " development"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " journey"}
+
+event: message_delta
+data: {"content": " toward"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": "-market"}
+
+event: message_delta
+data: {"content": " fit"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " not"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " linear"}
+
+event: message_delta
+data: {"content": " path"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " rather"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " it"}
+
+event: message_delta
+data: {"content": " requires"}
+
+event: message_delta
+data: {"content": " persistent"}
+
+event: message_delta
+data: {"content": " engagement"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " validate"}
+
+event: message_delta
+data: {"content": " ideas"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " iterate"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " features"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " ultimately"}
+
+event: message_delta
+data: {"content": " deliver"}
+
+event: message_delta
+data: {"content": " invaluable"}
+
+event: message_delta
+data: {"content": " solutions"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " \n\n"}
+
+event: message_delta
+data: {"content": "####"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Understanding"}
+
+event: message_delta
+data: {"content": " Customer"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": " Lo"}
+
+event: message_delta
+data: {"content": "ops"}
+
+event: message_delta
+data: {"content": "**\n\n"}
+
+event: message_delta
+data: {"content": "At"}
+
+event: message_delta
+data: {"content": " its"}
+
+event: message_delta
+data: {"content": " core"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " loop"}
+
+event: message_delta
+data: {"content": " consists"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " three"}
+
+event: message_delta
+data: {"content": " essential"}
+
+event: message_delta
+data: {"content": " stages"}
+
+event: message_delta
+data: {"content": ":\n\n"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Gather"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " This"}
+
+event: message_delta
+data: {"content": " involves"}
+
+event: message_delta
+data: {"content": " collecting"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " through"}
+
+event: message_delta
+data: {"content": " various"}
+
+event: message_delta
+data: {"content": " methods"}
+
+event: message_delta
+data: {"content": " such"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " surveys"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " interviews"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " direct"}
+
+event: message_delta
+data: {"content": " user"}
+
+event: message_delta
+data: {"content": " interactions"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " It"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " critical"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " develop"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " strategy"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " allows"}
+
+event: message_delta
+data: {"content": " you"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " actively"}
+
+event: message_delta
+data: {"content": " listen"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " understand"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " needs"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Analyze"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Post"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": "collection"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " needs"}
+
+event: message_delta
+data: {"content": " careful"}
+
+event: message_delta
+data: {"content": " analysis"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Ident"}
+
+event: message_delta
+data: {"content": "ifying"}
+
+event: message_delta
+data: {"content": " patterns"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " pain"}
+
+event: message_delta
+data: {"content": " points"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " aspirations"}
+
+event: message_delta
+data: {"content": " helps"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " priorit"}
+
+event: message_delta
+data: {"content": "izing"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " changes"}
+
+event: message_delta
+data: {"content": " will"}
+
+event: message_delta
+data: {"content": " yield"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " most"}
+
+event: message_delta
+data: {"content": " significant"}
+
+event: message_delta
+data: {"content": " impact"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "3"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Implement"}
+
+event: message_delta
+data: {"content": " Changes"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Finally"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " should"}
+
+event: message_delta
+data: {"content": " drive"}
+
+event: message_delta
+data: {"content": " action"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Ad"}
+
+event: message_delta
+data: {"content": "ap"}
+
+event: message_delta
+data: {"content": "ting"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " based"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " real"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " input"}
+
+event: message_delta
+data: {"content": " not"}
+
+event: message_delta
+data: {"content": " only"}
+
+event: message_delta
+data: {"content": " improves"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " but"}
+
+event: message_delta
+data: {"content": " also"}
+
+event: message_delta
+data: {"content": " fosters"}
+
+event: message_delta
+data: {"content": " loyalty"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " trust"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "####"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Why"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": " Lo"}
+
+event: message_delta
+data: {"content": "ops"}
+
+event: message_delta
+data: {"content": " Matter"}
+
+event: message_delta
+data: {"content": "**\n\n"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Validation"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " Ideas"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Kaz"}
+
+event: message_delta
+data: {"content": "anj"}
+
+event: message_delta
+data: {"content": "y"}
+
+event: message_delta
+data: {"content": " stresses"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " importance"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " validating"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " problems"}
+
+event: message_delta
+data: {"content": " you're"}
+
+event: message_delta
+data: {"content": " solving"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Eng"}
+
+event: message_delta
+data: {"content": "aging"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " ensures"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " hypotheses"}
+
+event: message_delta
+data: {"content": " about"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " needs"}
+
+event: message_delta
+data: {"content": " are"}
+
+event: message_delta
+data: {"content": " accurate"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Rather"}
+
+event: message_delta
+data: {"content": " than"}
+
+event: message_delta
+data: {"content": " guessing"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " market"}
+
+event: message_delta
+data: {"content": " wants"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " you"}
+
+event: message_delta
+data: {"content": " learn"}
+
+event: message_delta
+data: {"content": " directly"}
+
+event: message_delta
+data: {"content": " from"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " target"}
+
+event: message_delta
+data: {"content": " audience"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " enabling"}
+
+event: message_delta
+data: {"content": " informed"}
+
+event: message_delta
+data: {"content": " decisions"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Iteration"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " Improvement"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " The"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " development"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " iterative"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " As"}
+
+event: message_delta
+data: {"content": " Kaz"}
+
+event: message_delta
+data: {"content": "anj"}
+
+event: message_delta
+data: {"content": "y"}
+
+event: message_delta
+data: {"content": " indicates"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " minimum"}
+
+event: message_delta
+data: {"content": " viable"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " ("}
+
+event: message_delta
+data: {"content": "M"}
+
+event: message_delta
+data: {"content": "VP"}
+
+event: message_delta
+data: {"content": ")"}
+
+event: message_delta
+data: {"content": " might"}
+
+event: message_delta
+data: {"content": " not"}
+
+event: message_delta
+data: {"content": " be"}
+
+event: message_delta
+data: {"content": " perfect"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " but"}
+
+event: message_delta
+data: {"content": " each"}
+
+event: message_delta
+data: {"content": " cycle"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " allows"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " enhancements"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": " loops"}
+
+event: message_delta
+data: {"content": " create"}
+
+event: message_delta
+data: {"content": " detailed"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " inform"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " features"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " tweak"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " remove"}
+
+event: message_delta
+data: {"content": " entirely"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "3"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Customer"}
+
+event: message_delta
+data: {"content": "-C"}
+
+event: message_delta
+data: {"content": "entric"}
+
+event: message_delta
+data: {"content": " Development"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Customer"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " keeps"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " development"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": " aligned"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " user"}
+
+event: message_delta
+data: {"content": " needs"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " As"}
+
+event: message_delta
+data: {"content": " Anne"}
+
+event: message_delta
+data: {"content": "ka"}
+
+event: message_delta
+data: {"content": " Gupta"}
+
+event: message_delta
+data: {"content": " points"}
+
+event: message_delta
+data: {"content": " out"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " organizations"}
+
+event: message_delta
+data: {"content": " can't"}
+
+event: message_delta
+data: {"content": " make"}
+
+event: message_delta
+data: {"content": " everyone"}
+
+event: message_delta
+data: {"content": " happy"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " but"}
+
+event: message_delta
+data: {"content": " focusing"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " most"}
+
+event: message_delta
+data: {"content": " critical"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " ensures"}
+
+event: message_delta
+data: {"content": " you're"}
+
+event: message_delta
+data: {"content": " working"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " truly"}
+
+event: message_delta
+data: {"content": " matters"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " majority"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "4"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Building"}
+
+event: message_delta
+data: {"content": " Relationships"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Eng"}
+
+event: message_delta
+data: {"content": "aging"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": " helps"}
+
+event: message_delta
+data: {"content": " build"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " community"}
+
+event: message_delta
+data: {"content": " around"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " By"}
+
+event: message_delta
+data: {"content": " listening"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " acting"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " input"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " you"}
+
+event: message_delta
+data: {"content": " create"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " partnership"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " fosters"}
+
+event: message_delta
+data: {"content": " loyalty"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " advocacy"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " which"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " invaluable"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " today's"}
+
+event: message_delta
+data: {"content": " competition"}
+
+event: message_delta
+data: {"content": "-driven"}
+
+event: message_delta
+data: {"content": " market"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "####"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Effective"}
+
+event: message_delta
+data: {"content": " Techniques"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " Creating"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": " Lo"}
+
+event: message_delta
+data: {"content": "ops"}
+
+event: message_delta
+data: {"content": "**\n\n"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Regular"}
+
+event: message_delta
+data: {"content": " Check"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": "Ins"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Establish"}
+
+event: message_delta
+data: {"content": " scheduled"}
+
+event: message_delta
+data: {"content": " interactions"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Regular"}
+
+event: message_delta
+data: {"content": " touch"}
+
+event: message_delta
+data: {"content": "points"}
+
+event: message_delta
+data: {"content": "\u2014not"}
+
+event: message_delta
+data: {"content": " just"}
+
+event: message_delta
+data: {"content": " when"}
+
+event: message_delta
+data: {"content": " things"}
+
+event: message_delta
+data: {"content": " go"}
+
+event: message_delta
+data: {"content": " wrong"}
+
+event: message_delta
+data: {"content": "\u2014"}
+
+event: message_delta
+data: {"content": "help"}
+
+event: message_delta
+data: {"content": " build"}
+
+event: message_delta
+data: {"content": " rapport"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " promote"}
+
+event: message_delta
+data: {"content": " ongoing"}
+
+event: message_delta
+data: {"content": " dialogue"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " \n\n"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Sur"}
+
+event: message_delta
+data: {"content": "veys"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " Poll"}
+
+event: message_delta
+data: {"content": "s"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Use"}
+
+event: message_delta
+data: {"content": " these"}
+
+event: message_delta
+data: {"content": " tools"}
+
+event: message_delta
+data: {"content": " strategically"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " gauge"}
+
+event: message_delta
+data: {"content": " sentiment"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " specific"}
+
+event: message_delta
+data: {"content": " features"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " propositions"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Ensure"}
+
+event: message_delta
+data: {"content": " questions"}
+
+event: message_delta
+data: {"content": " are"}
+
+event: message_delta
+data: {"content": " clear"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " focused"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " relevant"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "3"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "User"}
+
+event: message_delta
+data: {"content": " Testing"}
+
+event: message_delta
+data: {"content": " Sessions"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Direct"}
+
+event: message_delta
+data: {"content": "ly"}
+
+event: message_delta
+data: {"content": " observe"}
+
+event: message_delta
+data: {"content": " users"}
+
+event: message_delta
+data: {"content": " interacting"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " These"}
+
+event: message_delta
+data: {"content": " sessions"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " unveil"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " might"}
+
+event: message_delta
+data: {"content": " not"}
+
+event: message_delta
+data: {"content": " surface"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " written"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "4"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Community"}
+
+event: message_delta
+data: {"content": " Engagement"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Consider"}
+
+event: message_delta
+data: {"content": " forums"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " social"}
+
+event: message_delta
+data: {"content": " media"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " platforms"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " gathering"}
+
+event: message_delta
+data: {"content": " thoughts"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Customers"}
+
+event: message_delta
+data: {"content": " often"}
+
+event: message_delta
+data: {"content": " feel"}
+
+event: message_delta
+data: {"content": " more"}
+
+event: message_delta
+data: {"content": " comfortable"}
+
+event: message_delta
+data: {"content": " sharing"}
+
+event: message_delta
+data: {"content": " openly"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " these"}
+
+event: message_delta
+data: {"content": " spaces"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "5"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Internal"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": " from"}
+
+event: message_delta
+data: {"content": " Teams"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Sol"}
+
+event: message_delta
+data: {"content": "icit"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " from"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": "-facing"}
+
+event: message_delta
+data: {"content": " teams"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " they"}
+
+event: message_delta
+data: {"content": " often"}
+
+event: message_delta
+data: {"content": " have"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " wealth"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " knowledge"}
+
+event: message_delta
+data: {"content": " about"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " pain"}
+
+event: message_delta
+data: {"content": " points"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " lead"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " actionable"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " adjustments"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "####"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Over"}
+
+event: message_delta
+data: {"content": "coming"}
+
+event: message_delta
+data: {"content": " Challenges"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " Incorpor"}
+
+event: message_delta
+data: {"content": "ating"}
+
+event: message_delta
+data: {"content": " Feedback"}
+
+event: message_delta
+data: {"content": "**\n\n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "D"}
+
+event: message_delta
+data: {"content": "iverse"}
+
+event: message_delta
+data: {"content": " Opinions"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " When"}
+
+event: message_delta
+data: {"content": " dealing"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " be"}
+
+event: message_delta
+data: {"content": " prepared"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " differing"}
+
+event: message_delta
+data: {"content": " opinions"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Not"}
+
+event: message_delta
+data: {"content": " all"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " will"}
+
+event: message_delta
+data: {"content": " be"}
+
+event: message_delta
+data: {"content": " actionable"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " beneficial"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Establish"}
+
+event: message_delta
+data: {"content": " clear"}
+
+event: message_delta
+data: {"content": " metrics"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " deciding"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " prioritize"}
+
+event: message_delta
+data: {"content": ".\n"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Managing"}
+
+event: message_delta
+data: {"content": " Expectations"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Not"}
+
+event: message_delta
+data: {"content": " all"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " suggestions"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " be"}
+
+event: message_delta
+data: {"content": " implemented"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Commun"}
+
+event: message_delta
+data: {"content": "icate"}
+
+event: message_delta
+data: {"content": " transpar"}
+
+event: message_delta
+data: {"content": "ently"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " about"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " roadmap"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " how"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " influences"}
+
+event: message_delta
+data: {"content": " it"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Iteration"}
+
+event: message_delta
+data: {"content": " Fat"}
+
+event: message_delta
+data: {"content": "igue"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Continuous"}
+
+event: message_delta
+data: {"content": " revisions"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " lead"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " team"}
+
+event: message_delta
+data: {"content": " burnout"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Balance"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": "-driven"}
+
+event: message_delta
+data: {"content": " development"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " strategic"}
+
+event: message_delta
+data: {"content": " vision"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " maintain"}
+
+event: message_delta
+data: {"content": " morale"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " clarity"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " purpose"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "####"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Conclusion"}
+
+event: message_delta
+data: {"content": "**\n\n"}
+
+event: message_delta
+data: {"content": "In"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " development"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " loops"}
+
+event: message_delta
+data: {"content": " are"}
+
+event: message_delta
+data: {"content": " not"}
+
+event: message_delta
+data: {"content": " merely"}
+
+event: message_delta
+data: {"content": " beneficial"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " they"}
+
+event: message_delta
+data: {"content": " are"}
+
+event: message_delta
+data: {"content": " essential"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " As"}
+
+event: message_delta
+data: {"content": " articulated"}
+
+event: message_delta
+data: {"content": " by"}
+
+event: message_delta
+data: {"content": " industry"}
+
+event: message_delta
+data: {"content": " leaders"}
+
+event: message_delta
+data: {"content": " such"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " Kaz"}
+
+event: message_delta
+data: {"content": "anj"}
+
+event: message_delta
+data: {"content": "y"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " Gupta"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " gathering"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " analyzing"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " implementing"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " creates"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " vital"}
+
+event: message_delta
+data: {"content": " link"}
+
+event: message_delta
+data: {"content": " between"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " company"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " its"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " This"}
+
+event: message_delta
+data: {"content": " relationship"}
+
+event: message_delta
+data: {"content": " ensures"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " products"}
+
+event: message_delta
+data: {"content": " not"}
+
+event: message_delta
+data: {"content": " only"}
+
+event: message_delta
+data: {"content": " meet"}
+
+event: message_delta
+data: {"content": " market"}
+
+event: message_delta
+data: {"content": " demands"}
+
+event: message_delta
+data: {"content": " but"}
+
+event: message_delta
+data: {"content": " also"}
+
+event: message_delta
+data: {"content": " evolve"}
+
+event: message_delta
+data: {"content": " alongside"}
+
+event: message_delta
+data: {"content": " them"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " By"}
+
+event: message_delta
+data: {"content": " priorit"}
+
+event: message_delta
+data: {"content": "izing"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " businesses"}
+
+event: message_delta
+data: {"content": " position"}
+
+event: message_delta
+data: {"content": " themselves"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " sustained"}
+
+event: message_delta
+data: {"content": " growth"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " success"}
+
+event: message_delta
+data: {"content": " while"}
+
+event: message_delta
+data: {"content": " cultivating"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " loyal"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " base"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": "Take"}
+
+event: message_delta
+data: {"content": "away"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Em"}
+
+event: message_delta
+data: {"content": "brace"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " loops"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " ongoing"}
+
+event: message_delta
+data: {"content": " journeys"}
+
+event: message_delta
+data: {"content": " rather"}
+
+event: message_delta
+data: {"content": " than"}
+
+event: message_delta
+data: {"content": " one"}
+
+event: message_delta
+data: {"content": "-time"}
+
+event: message_delta
+data: {"content": " events"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Cons"}
+
+event: message_delta
+data: {"content": "istent"}
+
+event: message_delta
+data: {"content": " engagement"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " analysis"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " implementation"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": " foster"}
+
+event: message_delta
+data: {"content": " deeper"}
+
+event: message_delta
+data: {"content": " connections"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " create"}
+
+event: message_delta
+data: {"content": " better"}
+
+event: message_delta
+data: {"content": " products"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " ultimately"}
+
+event: message_delta
+data: {"content": " drive"}
+
+event: message_delta
+data: {"content": " business"}
+
+event: message_delta
+data: {"content": " success"}
+
+event: message_delta
+data: {"content": "."}
+
+event: done
+data: {"message_id": "661171e4-7512-4c8f-942d-84d7c96396ae", "skill_used": null}
+

@@ -1,0 +1,1620 @@
+event: artifact_created
+data: {"id": "87f10a2c-289f-4ba8-a7a0-ed49bed646d7", "type": "markdown", "title": "Hiring Playbook", "content": "# Hiring Playbook\n\nHiring the right talent is crucial for any organization. Leveraging insights from industry experts can help shape effective hiring practices. This playbook outlines best practices for finding, assessing, and closing talent to build a strong team.\n\n---\n\n## 1. Build Your Employer Brand  \n- **Market Perception:**  \n  Understand how your company is perceived. Positive brand reputation can attract top talent.  \n- **Authentic Messaging:**  \n  Develop a genuine narrative around your company\u2019s mission and values to resonate with potential candidates.\n\n---\n\n## 2. Understand Candidate Motivations  \n- **Market Insights:**  \n  Understand what motivates your candidates. Personalize your approach to meet their aspirations and concerns.  \n- **Active Listening:**  \n  Listen closely during interviews to align the role with what they find essential.\n\n---\n\n## 3. Hire Slowly and Thoughtfully  \n- **Quality Over Quantity:**  \n  Prioritize finding the right fit over hastily filling positions\u2014this approach leads to longer-term success.  \n- **Post-Hire Considerations:**  \n  Think about how a candidate's contributions will impact the team and company in the long run.\n\n---\n\n## 4. Look for Signs of Excellence  \n- **Past Performance:**  \n  Identify candidates who have shown repeated success in their careers, reflecting a pattern of excellence.  \n- **Positive Signals:**  \n  Watch for indications that others have tried to poach them, highlighting their value.\n\n---\n\n## 5. Assess Cultural Fit  \n- **Core Values:**  \n  Evaluate candidates based on how well their personal values align with the company's culture.  \n- **Cultural Interviews:**  \n  Incorporate cultural assessments alongside functional and technical evaluations to ensure alignment.\n\n---\n\n## 6. Leverage Real-World Experiences  \n- **Practical Scenarios:**  \n  Use real-world tasks or challenges to gauge a candidate\u2019s ability to perform in the role effectively.  \n- **Collaborative Hiring:**  \n  Engage diverse team members in the hiring process to gain different perspectives and insights.\n\n---\n\n## 7. Foster a Hiring Mindset Across the Team  \n- **Team Involvement:**  \n  Encourage team members to participate in the hiring process, enhancing ownership of outcomes.  \n- **Continuous Learning:**  \n  Create an environment where sharing insights on hiring enhances the overall process.\n\n---\n\n## Conclusion  \nBy implementing these best practices, organizations can build talented, passionate teams aligned with their mission. Each hire shapes the company\u2019s future, making careful consideration imperative."}
+
+event: message_delta
+data: {"content": "Here's"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Hiring"}
+
+event: message_delta
+data: {"content": " Play"}
+
+event: message_delta
+data: {"content": "book"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " Markdown"}
+
+event: message_delta
+data: {"content": " format"}
+
+event: message_delta
+data: {"content": ":\n\n"}
+
+event: message_delta
+data: {"content": "```"}
+
+event: message_delta
+data: {"content": "markdown"}
+
+event: message_delta
+data: {"content": "\n"}
+
+event: message_delta
+data: {"content": "#"}
+
+event: message_delta
+data: {"content": " Hiring"}
+
+event: message_delta
+data: {"content": " Play"}
+
+event: message_delta
+data: {"content": "book"}
+
+event: message_delta
+data: {"content": "\n\n"}
+
+event: message_delta
+data: {"content": "Hiring"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " right"}
+
+event: message_delta
+data: {"content": " talent"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " crucial"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " any"}
+
+event: message_delta
+data: {"content": " organization"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Lever"}
+
+event: message_delta
+data: {"content": "aging"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " from"}
+
+event: message_delta
+data: {"content": " industry"}
+
+event: message_delta
+data: {"content": " experts"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " help"}
+
+event: message_delta
+data: {"content": " shape"}
+
+event: message_delta
+data: {"content": " effective"}
+
+event: message_delta
+data: {"content": " hiring"}
+
+event: message_delta
+data: {"content": " practices"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " This"}
+
+event: message_delta
+data: {"content": " play"}
+
+event: message_delta
+data: {"content": "book"}
+
+event: message_delta
+data: {"content": " outlines"}
+
+event: message_delta
+data: {"content": " best"}
+
+event: message_delta
+data: {"content": " practices"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " finding"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " assessing"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " closing"}
+
+event: message_delta
+data: {"content": " talent"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " build"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " strong"}
+
+event: message_delta
+data: {"content": " team"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Build"}
+
+event: message_delta
+data: {"content": " Your"}
+
+event: message_delta
+data: {"content": " Employer"}
+
+event: message_delta
+data: {"content": " Brand"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Market"}
+
+event: message_delta
+data: {"content": " Per"}
+
+event: message_delta
+data: {"content": "ception"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Understand"}
+
+event: message_delta
+data: {"content": " how"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " company"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " perceived"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Positive"}
+
+event: message_delta
+data: {"content": " brand"}
+
+event: message_delta
+data: {"content": " reputation"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " attract"}
+
+event: message_delta
+data: {"content": " top"}
+
+event: message_delta
+data: {"content": " talent"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Authent"}
+
+event: message_delta
+data: {"content": "ic"}
+
+event: message_delta
+data: {"content": " Messaging"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Develop"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " genuine"}
+
+event: message_delta
+data: {"content": " narrative"}
+
+event: message_delta
+data: {"content": " around"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " company"}
+
+event: message_delta
+data: {"content": "\u2019s"}
+
+event: message_delta
+data: {"content": " mission"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " values"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " resonate"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " potential"}
+
+event: message_delta
+data: {"content": " candidates"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Understand"}
+
+event: message_delta
+data: {"content": " Candidate"}
+
+event: message_delta
+data: {"content": " Motiv"}
+
+event: message_delta
+data: {"content": "ations"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Market"}
+
+event: message_delta
+data: {"content": " Insights"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Understand"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " motivates"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " candidates"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Personal"}
+
+event: message_delta
+data: {"content": "ize"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " approach"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " meet"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " aspirations"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " concerns"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Active"}
+
+event: message_delta
+data: {"content": " Listening"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Listen"}
+
+event: message_delta
+data: {"content": " closely"}
+
+event: message_delta
+data: {"content": " during"}
+
+event: message_delta
+data: {"content": " interviews"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " align"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " role"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " what"}
+
+event: message_delta
+data: {"content": " they"}
+
+event: message_delta
+data: {"content": " find"}
+
+event: message_delta
+data: {"content": " essential"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "3"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Hire"}
+
+event: message_delta
+data: {"content": " Slowly"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " Thought"}
+
+event: message_delta
+data: {"content": "fully"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Quality"}
+
+event: message_delta
+data: {"content": " Over"}
+
+event: message_delta
+data: {"content": " Quantity"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Prior"}
+
+event: message_delta
+data: {"content": "itize"}
+
+event: message_delta
+data: {"content": " finding"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " right"}
+
+event: message_delta
+data: {"content": " fit"}
+
+event: message_delta
+data: {"content": " over"}
+
+event: message_delta
+data: {"content": " hast"}
+
+event: message_delta
+data: {"content": "ily"}
+
+event: message_delta
+data: {"content": " filling"}
+
+event: message_delta
+data: {"content": " positions"}
+
+event: message_delta
+data: {"content": "\u2014"}
+
+event: message_delta
+data: {"content": "this"}
+
+event: message_delta
+data: {"content": " approach"}
+
+event: message_delta
+data: {"content": " leads"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " longer"}
+
+event: message_delta
+data: {"content": "-term"}
+
+event: message_delta
+data: {"content": " success"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Post"}
+
+event: message_delta
+data: {"content": "-H"}
+
+event: message_delta
+data: {"content": "ire"}
+
+event: message_delta
+data: {"content": " Consider"}
+
+event: message_delta
+data: {"content": "ations"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Think"}
+
+event: message_delta
+data: {"content": " about"}
+
+event: message_delta
+data: {"content": " how"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " candidate"}
+
+event: message_delta
+data: {"content": "'s"}
+
+event: message_delta
+data: {"content": " contributions"}
+
+event: message_delta
+data: {"content": " will"}
+
+event: message_delta
+data: {"content": " impact"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " team"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " company"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " long"}
+
+event: message_delta
+data: {"content": " run"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "4"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Look"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " Signs"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " Excellence"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Past"}
+
+event: message_delta
+data: {"content": " Performance"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Identify"}
+
+event: message_delta
+data: {"content": " candidates"}
+
+event: message_delta
+data: {"content": " who"}
+
+event: message_delta
+data: {"content": " have"}
+
+event: message_delta
+data: {"content": " shown"}
+
+event: message_delta
+data: {"content": " repeated"}
+
+event: message_delta
+data: {"content": " success"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " careers"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " reflecting"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " pattern"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " excellence"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Positive"}
+
+event: message_delta
+data: {"content": " Signals"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Watch"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " indications"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " others"}
+
+event: message_delta
+data: {"content": " have"}
+
+event: message_delta
+data: {"content": " tried"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " po"}
+
+event: message_delta
+data: {"content": "ach"}
+
+event: message_delta
+data: {"content": " them"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " highlighting"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "5"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Assess"}
+
+event: message_delta
+data: {"content": " Cultural"}
+
+event: message_delta
+data: {"content": " Fit"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Core"}
+
+event: message_delta
+data: {"content": " Values"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Evaluate"}
+
+event: message_delta
+data: {"content": " candidates"}
+
+event: message_delta
+data: {"content": " based"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " how"}
+
+event: message_delta
+data: {"content": " well"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " personal"}
+
+event: message_delta
+data: {"content": " values"}
+
+event: message_delta
+data: {"content": " align"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " company's"}
+
+event: message_delta
+data: {"content": " culture"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "C"}
+
+event: message_delta
+data: {"content": "ultural"}
+
+event: message_delta
+data: {"content": " Interviews"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Incorpor"}
+
+event: message_delta
+data: {"content": "ate"}
+
+event: message_delta
+data: {"content": " cultural"}
+
+event: message_delta
+data: {"content": " assessments"}
+
+event: message_delta
+data: {"content": " alongside"}
+
+event: message_delta
+data: {"content": " functional"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " technical"}
+
+event: message_delta
+data: {"content": " evaluations"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " ensure"}
+
+event: message_delta
+data: {"content": " alignment"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "6"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Le"}
+
+event: message_delta
+data: {"content": "verage"}
+
+event: message_delta
+data: {"content": " Real"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": "World"}
+
+event: message_delta
+data: {"content": " Experiences"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Pr"}
+
+event: message_delta
+data: {"content": "actical"}
+
+event: message_delta
+data: {"content": " Sc"}
+
+event: message_delta
+data: {"content": "enarios"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Use"}
+
+event: message_delta
+data: {"content": " real"}
+
+event: message_delta
+data: {"content": "-world"}
+
+event: message_delta
+data: {"content": " tasks"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " challenges"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " gauge"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " candidate"}
+
+event: message_delta
+data: {"content": "\u2019s"}
+
+event: message_delta
+data: {"content": " ability"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " perform"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " role"}
+
+event: message_delta
+data: {"content": " effectively"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Collabor"}
+
+event: message_delta
+data: {"content": "ative"}
+
+event: message_delta
+data: {"content": " Hiring"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Engage"}
+
+event: message_delta
+data: {"content": " diverse"}
+
+event: message_delta
+data: {"content": " team"}
+
+event: message_delta
+data: {"content": " members"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " hiring"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " gain"}
+
+event: message_delta
+data: {"content": " different"}
+
+event: message_delta
+data: {"content": " perspectives"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "7"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Foster"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " Hiring"}
+
+event: message_delta
+data: {"content": " Mind"}
+
+event: message_delta
+data: {"content": "set"}
+
+event: message_delta
+data: {"content": " Across"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " Team"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Team"}
+
+event: message_delta
+data: {"content": " In"}
+
+event: message_delta
+data: {"content": "vol"}
+
+event: message_delta
+data: {"content": "vement"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Encourage"}
+
+event: message_delta
+data: {"content": " team"}
+
+event: message_delta
+data: {"content": " members"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " participate"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " hiring"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " enhancing"}
+
+event: message_delta
+data: {"content": " ownership"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " outcomes"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Continuous"}
+
+event: message_delta
+data: {"content": " Learning"}
+
+event: message_delta
+data: {"content": ":**"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": " Create"}
+
+event: message_delta
+data: {"content": " an"}
+
+event: message_delta
+data: {"content": " environment"}
+
+event: message_delta
+data: {"content": " where"}
+
+event: message_delta
+data: {"content": " sharing"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " hiring"}
+
+event: message_delta
+data: {"content": " enhances"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " overall"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": ".\n\n"}
+
+event: message_delta
+data: {"content": "---\n\n"}
+
+event: message_delta
+data: {"content": "##"}
+
+event: message_delta
+data: {"content": " Conclusion"}
+
+event: message_delta
+data: {"content": "  \n"}
+
+event: message_delta
+data: {"content": "By"}
+
+event: message_delta
+data: {"content": " implementing"}
+
+event: message_delta
+data: {"content": " these"}
+
+event: message_delta
+data: {"content": " best"}
+
+event: message_delta
+data: {"content": " practices"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " organizations"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " build"}
+
+event: message_delta
+data: {"content": " talented"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " passionate"}
+
+event: message_delta
+data: {"content": " teams"}
+
+event: message_delta
+data: {"content": " aligned"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " mission"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Each"}
+
+event: message_delta
+data: {"content": " hire"}
+
+event: message_delta
+data: {"content": " shapes"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " company"}
+
+event: message_delta
+data: {"content": "\u2019s"}
+
+event: message_delta
+data: {"content": " future"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " making"}
+
+event: message_delta
+data: {"content": " careful"}
+
+event: message_delta
+data: {"content": " consideration"}
+
+event: message_delta
+data: {"content": " imperative"}
+
+event: message_delta
+data: {"content": ".\n"}
+
+event: message_delta
+data: {"content": "``"}
+
+event: message_delta
+data: {"content": "`\n\n"}
+
+event: message_delta
+data: {"content": "Feel"}
+
+event: message_delta
+data: {"content": " free"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " copy"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " use"}
+
+event: message_delta
+data: {"content": " this"}
+
+event: message_delta
+data: {"content": " Markdown"}
+
+event: message_delta
+data: {"content": " content"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " needed"}
+
+event: message_delta
+data: {"content": "!"}
+
+event: message_delta
+data: {"content": " Let"}
+
+event: message_delta
+data: {"content": " me"}
+
+event: message_delta
+data: {"content": " know"}
+
+event: message_delta
+data: {"content": " if"}
+
+event: message_delta
+data: {"content": " you"}
+
+event: message_delta
+data: {"content": " need"}
+
+event: message_delta
+data: {"content": " further"}
+
+event: message_delta
+data: {"content": " adjustments"}
+
+event: message_delta
+data: {"content": "."}
+
+event: done
+data: {"message_id": "6c154d79-5d2f-4df4-8b48-15855b6b3654", "skill_used": "create_artifact"}
+

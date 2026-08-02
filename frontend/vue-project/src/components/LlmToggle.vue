@@ -11,7 +11,9 @@ const selectedOption = computed({
     return `${provider}:${model}`
   },
   set(val: string) {
-    const [provider, model] = val.split(':')
+    const colonIndex = val.indexOf(':')
+    const provider = val.slice(0, colonIndex)
+    const model = val.slice(colonIndex + 1)
     store.updateConfig(provider as any, model || 'gpt-4o-mini')
   }
 })
@@ -31,6 +33,7 @@ const isOllamaDown = computed(() => {
       >
         <option value="openai:gpt-4o-mini">Cloud — GPT-4o-mini (OpenAI)</option>
         <option value="ollama:llama3.1:8b">Local — Llama 3.1 8B (Ollama)</option>
+        <option value="ollama:phi4-mini:3.8b">Local — Phi 4 Mini 3.8B (Ollama)</option>
         <option value="anthropic:claude-3-5-sonnet-20241022">Cloud — Claude 3.5 Sonnet (Anthropic)</option>
       </select>
     </div>

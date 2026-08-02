@@ -20,10 +20,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from ..database import get_db
-from ..models import Session as SessionModel, Message as MessageModel
+from ..models import Session as SessionModel, Message as MessageModel, Artifact as ArtifactModel
 from ..schemas import (
     SessionCreate,
     SessionConfigPatch,
+    SessionTitlePatch,
     SessionListItem,
     SessionOut,
 )
@@ -49,7 +50,20 @@ async def create_session(
     db.add(session)
     await db.flush()  # generate PK without committing
     await db.refresh(session)
-    return SessionOut.model_validate(session)
+    # Explicitly construct with messages=[] and artifacts=[] — a brand-new session
+    # always has zero messages and zero artifacts, and accessing the lazy-loaded ORM
+    # relationships here would trigger MissingGreenlet (async lazy-load inside
+    # Pydantic's sync validator).
+    return SessionOut(
+        id=session.id,
+        title=session.title,
+        llm_provider=session.llm_provider,
+        llm_model=session.llm_model,
+        created_at=session.created_at,
+        updated_at=session.updated_at,
+        messages=[],
+        artifacts=[],
+    )
 
 
 @router.get(
@@ -70,7 +84,7 @@ async def list_sessions(
 @router.get(
     "/{session_id}",
     response_model=SessionOut,
-    summary="Get session with full message history",
+    summary="Get session with full message history and artifacts",
 )
 async def get_session(
     session_id: uuid.UUID,
@@ -80,6 +94,7 @@ async def get_session(
         select(SessionModel)
         .where(SessionModel.id == session_id)
         .options(selectinload(SessionModel.messages))
+        .options(selectinload(SessionModel.artifacts))
     )
     session = result.scalar_one_or_none()
     if session is None:
@@ -93,7 +108,7 @@ async def get_session(
 @router.patch(
     "/{session_id}/config",
     response_model=SessionOut,
-    summary="Update llm_provider / llm_model / title for a session",
+    summary="Update llm_provider / llm_model for a session",
 )
 async def patch_session_config(
     session_id: uuid.UUID,
@@ -101,9 +116,7 @@ async def patch_session_config(
     db: AsyncSession = Depends(get_db),
 ) -> SessionOut:
     result = await db.execute(
-        select(SessionModel)
-        .where(SessionModel.id == session_id)
-        .options(selectinload(SessionModel.messages))
+        select(SessionModel).where(SessionModel.id == session_id)
     )
     session = result.scalar_one_or_none()
     if session is None:
@@ -121,5 +134,69 @@ async def patch_session_config(
     session.updated_at = func.now()
 
     await db.flush()
-    await db.refresh(session)
+
+    # Re-query with selectinload to eagerly fetch messages and artifacts for
+    # SessionOut serialization — db.refresh() does NOT reload relationships.
+    refreshed = await db.execute(
+        select(SessionModel)
+        .where(SessionModel.id == session_id)
+        .options(selectinload(SessionModel.messages))
+        .options(selectinload(SessionModel.artifacts))
+    )
+    session = refreshed.scalar_one()
     return SessionOut.model_validate(session)
+
+
+@router.patch(
+    "/{session_id}",
+    response_model=SessionListItem,
+    summary="Update session title",
+)
+async def patch_session_title(
+    session_id: uuid.UUID,
+    body: SessionTitlePatch,
+    db: AsyncSession = Depends(get_db),
+) -> SessionListItem:
+    result = await db.execute(
+        select(SessionModel).where(SessionModel.id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if session is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Session {session_id} not found.",
+        )
+
+    session.title = body.title
+
+    # Explicitly bump updated_at
+    from sqlalchemy import func
+    session.updated_at = func.now()
+
+    await db.commit()
+    await db.refresh(session)
+
+    return SessionListItem.model_validate(session)
+
+
+@router.delete(
+    "/{session_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    summary="Delete a session (cascades to messages and artifacts)",
+)
+async def delete_session(
+    session_id: uuid.UUID,
+    db: AsyncSession = Depends(get_db),
+) -> None:
+    result = await db.execute(
+        select(SessionModel).where(SessionModel.id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if session is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Session {session_id} not found.",
+        )
+
+    await db.delete(session)
+    await db.commit()

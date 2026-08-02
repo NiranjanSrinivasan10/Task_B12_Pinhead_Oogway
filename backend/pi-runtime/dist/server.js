@@ -57,11 +57,15 @@ const generateShip30EssayTool = {
     }),
     execute: async (toolCallId, params) => {
         const topic = params?.topic || "Product Strategy";
+        const sourceContext = params?.source_context || "";
+        console.error(`[PI_TOOL] generate_ship30_essay called with topic: ${topic}, context length: ${sourceContext.length}`);
+        // Return context for the Pi agent to synthesize into an essay
         return {
-            content: [{ type: "text", text: `Generated Ship30 essay on ${topic}` }],
+            content: [{ type: "text", text: sourceContext || `Context for essay on ${topic}` }],
             details: {
                 status: "success",
-                essay: `# ${topic}\n\n**Hook:** Here is a powerful takeaway.\n\n- Key insight 1\n- Key insight 2\n\n*Closing takeaway:* Apply this today.`
+                topic: topic,
+                context_provided: !!sourceContext
             }
         };
     }
@@ -80,14 +84,15 @@ const createArtifactTool = {
         const artType = params?.type || "markdown";
         const title = params?.title || "Artifact";
         const content = params?.content || "";
+        console.error(`[PI_TOOL] create_artifact called with type: ${artType}, title: ${title}, content length: ${content.length}`);
+        // Return content for the Pi agent to process/save
         return {
-            content: [{ type: "text", text: `Created ${artType} artifact: ${title}` }],
+            content: [{ type: "text", text: content }],
             details: {
                 status: "created",
-                artifact_id: "stub-artifact-1",
                 type: artType,
                 title: title,
-                content: content
+                content_provided: !!content
             }
         };
     }
@@ -99,18 +104,53 @@ You have access ONLY to three custom tools:
 2. generate_ship30_essay — generate skimmable Ship30for30 essays
 3. create_artifact — render markdown or HTML artifacts live in the UI
 
+CRITICAL RULE FOR create_artifact ONLY:
+This brief-response rule applies ONLY when you call create_artifact.
+After you successfully call create_artifact, your chat response MUST be brief and MUST NOT include the full artifact content in a fenced code block.
+Instead, say something like: "I've created the [title] artifact — you can view and edit it in the panel on the right."
+The full content is automatically rendered in the artifact panel separately. Do NOT duplicate it in the chat.
+
+IMPORTANT: When you call generate_ship30_essay, your full essay text IS the chat response — stream it directly into the chat bubble. Do NOT summarize it or redirect to a panel. Essays are conversational content, not artifacts.
+
 Rules:
 - Strictly ground your answers in retrieved transcript content.
 - Always cite the guest and episode when providing advice drawn from transcripts.
-- If retrieval produces no relevant results, explicitly say so rather than guessing.`;
+- If retrieval produces no relevant results, explicitly say so rather than guessing.
+
+IMPORTANT: Users will not always say 'use the search tool' or 'generate an artifact' explicitly — recognize requests like 'what does X say about Y', 'write an essay on Z', or 'give me a report on W' as needing search_transcripts, generate_ship30_essay, or create_artifact respectively, even without those exact words.
+
+For create_artifact specifically, recognize varied phrasings like:
+- 'create an HTML artifact' or 'create a markdown artifact'
+- 'HTML artifact' or 'markdown artifact' appearing anywhere in the message
+- 'styled CSS', 'interactive page/tool/calculator'
+- 'generate a document', 'write a guide', 'make me a report'
+
+Ship30 Essay Requirements (when using generate_ship30_essay):
+- Target word count: 1100-1400 words
+- Start with a powerful hook (1-2 sentences that grab attention)
+- Use bold subheadings for key sections
+- Use bullet points for key insights
+- End with a clear, actionable takeaway
+- Keep it concise and skimmable
+- Ground everything in the provided transcript context
+
+Artifact Generation Requirements (when using create_artifact):
+- CRITICAL: You MUST synthesize the retrieved transcript context into genuine, structured content BEFORE calling create_artifact.
+- Do NOT pass raw retrieved context directly to create_artifact.
+- Create well-structured, professional documents with clear headings and sections
+- Make content actionable and practical
+- Ground it in the provided transcript context
+- If the user didn't specify a title, create a descriptive one based on the content`;
 function send(msg) {
     process.stdout.write(JSON.stringify(msg) + "\n");
 }
 async function handleRequest(req) {
     const { id, session_id, messages, provider, model, api_key } = req;
+    console.error(`[PI_RPC] Received model: ${JSON.stringify(model)}, provider: ${JSON.stringify(provider)}`);
     try {
         const llmProvider = provider || "openai";
         const llmModel = model || "gpt-4o-mini";
+        console.error(`[PI_RPC] Using model: ${JSON.stringify(llmModel)} (source: ${model ? 'session.llm_model' : 'fallback default'})`);
         if (api_key) {
             if (llmProvider === "openai")
                 process.env.OPENAI_API_KEY = api_key;

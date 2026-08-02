@@ -5,12 +5,13 @@ FastAPI application entry point.
 
 Start the server:
     cd backend
-    .\\venv\\Scripts\\activate   (Windows)
-    uvicorn app.main:app --reload --port 8000
+    .\venv\Scripts\activate   (Windows)
+    python run.py
 """
 
 from __future__ import annotations
 
+import asyncio
 import logging
 import sys
 
@@ -71,6 +72,12 @@ app.include_router(health.router)
 async def _startup() -> None:
     """Validate DB connection at startup; fail loudly if the DB is unreachable."""
     logger.info("=== Lenny Growth Assistant API starting up ===")
+
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.get_event_loop()
+    logger.info("[OK] Active asyncio event loop: %s", type(loop).__name__)
 
     # 1. Check DB connection
     from .database import check_db_connection

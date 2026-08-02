@@ -142,29 +142,22 @@ frontend uses to open the viewer panel.
 ## 5. LLM toggle implementation
 
 Each session stores `llm_provider` and `llm_model`. On every message, the
-backend passes these to the Pi RPC call as the active model selection.
+backend branches based on the provider:
 
-- **Cloud**: OpenAI (`gpt-4o-mini` or similar) is the confirmed cloud
-  provider for this submission, picked up automatically from
-  `OPENAI_API_KEY`. Anthropic support is left wired in via the same
-  mechanism (`ANTHROPIC_API_KEY`) since Pi is provider-agnostic by
-  design, but is not required for this submission.
-- **Local (Ollama)**: registered via a generated `models.json` pointing
-  at Ollama's OpenAI-compatible endpoint:
-
-```json
-{
-  "providers": {
-    "ollama": {
-      "baseUrl": "http://localhost:11434/v1",
-      "api": "openai-completions",
-      "apiKey": "ollama",
-      "compat": { "supportsDeveloperRole": false, "supportsReasoningEffort": false },
-      "models": [{ "id": "llama3.1:8b" }]
-    }
-  }
-}
-```
+- **Cloud (OpenAI, Anthropic, etc.)**: Uses the Pi RPC subprocess. The
+  Python backend sends the conversation history to the Pi Node process via
+  JSON-RPC/stdio, which handles the agent reasoning loop and LLM provider
+  connection. Tool execution happens in Python — Pi never touches the
+  database directly. This path is used for `llm_provider` values like
+  "openai", "anthropic", etc.
+- **Local (Ollama)**: Integrated directly via the OpenAI Python SDK,
+  pointed at `http://localhost:11434/v1` (Ollama's OpenAI-compatible
+  endpoint). A manual tool-calling loop is implemented in-process in
+  `app/ollama_agent.py`, reusing the same tool handler functions
+  (`search_transcripts`, `generate_ship30_essay`, `create_artifact`) as
+  the Pi path. This bypasses the Pi RPC subprocess entirely because Pi's
+  `getModel` function only supports built-in providers (fixed union type)
+  and does not support custom/arbitrary providers like Ollama.
 
 The frontend exposes a simple dropdown in the session header
 (`GPT-4o-mini (cloud)` / `Llama 3.1 (local)`); selecting an option calls
@@ -175,7 +168,7 @@ The frontend exposes a simple dropdown in the session header
 - Missing cloud API key for the selected provider → fail fast with a
   structured error at the point of use, surfaced as a toast, not a
   generic 500.
-- Ollama unreachable → caught at the RPC boundary, surfaced as
+- Ollama unreachable → caught at the OpenAI SDK boundary, surfaced as
   "Local model unavailable — is `ollama serve` running?"
 - Empty/low-confidence retrieval → the agent is instructed to say so
   explicitly rather than answering from general knowledge, preserving
@@ -186,9 +179,14 @@ The frontend exposes a simple dropdown in the session header
 Pi's SDK is Node/TypeScript; the backend is Python — this requires an RPC
 subprocess boundary rather than an in-process function call, which adds
 minor latency per turn (subprocess round-trip vs. direct call). This was
-accepted because it gets multi-provider model switching (cloud + local)
+accepted for cloud providers because it gets multi-provider model switching
 largely for free via Pi's own provider/model config, rather than
-hand-rolling that abstraction in Python. If the RPC integration proved
-unreliable under time constraints, the documented fallback is a direct
-Anthropic/OpenAI SDK client in Python with an equivalent manual tool
-router — same tool contracts, no subprocess dependency.
+hand-rolling that abstraction in Python.
+
+However, Pi's `getModel` function only supports built-in providers (a fixed
+union type including "openai", "anthropic", etc.) and does not support
+custom/arbitrary providers like Ollama. Therefore, the documented fallback
+strategy has been implemented for the Ollama path: a direct OpenAI SDK
+client in Python with an equivalent manual tool router — same tool contracts,
+no subprocess dependency. This is an implementation refinement of the
+fallback strategy documented from the start, not an unplanned deviation.

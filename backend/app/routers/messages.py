@@ -41,6 +41,7 @@ from ..models import (
 from ..pi_client import PiRPCError, pi_client
 from ..schemas import MessageCreate
 from .search import hybrid_search
+from ..ollama_agent import run_ollama_turn
 
 logger = logging.getLogger(__name__)
 
@@ -105,7 +106,7 @@ async def _execute_tool(
 
         return f"Artifact '{title}' created.", {
             "id": str(artifact.id),
-            "type": artifact_type,
+            "artifact_type": artifact_type,
             "title": title,
             "content": content,
         }
@@ -129,10 +130,10 @@ async def _stream_response(
     """
     db_factory = get_session_factory()
 
-    # ── 1. Validate provider key ────────────────────────────────────────────
+    # ── 1. Validate provider key (skip for Ollama) ─────────────────────────
     provider = session.llm_provider
     try:
-        api_key = settings.require_provider_key(provider)
+        api_key = settings.require_provider_key(provider) if provider != "ollama" else ""
     except ValueError as exc:
         yield _sse("error", {
             "code": "missing_api_key",
@@ -140,18 +141,36 @@ async def _stream_response(
         })
         return
 
-    # ── 2. Fetch conversation history ───────────────────────────────────────
+    # ── 2. Insert placeholder assistant message ─────────────────────────────
+    # We need a committed message row BEFORE any tool calls run, because
+    # create_artifact inserts an artifacts row with a FK to messages.id.
+    # This placeholder is updated with the real content once generation ends.
+    async with db_factory() as db:
+        assistant_msg = MessageModel(
+            session_id=session.id,
+            role="assistant",
+            content="",
+        )
+        db.add(assistant_msg)
+        await db.commit()
+        await db.refresh(assistant_msg)
+        assistant_msg_id = assistant_msg.id
+
+    # ── 3. Fetch conversation history ───────────────────────────────────────
+    # The user message was committed in post_message() before we were called,
+    # so this query sees it. We exclude the empty placeholder assistant row.
     async with db_factory() as db:
         result = await db.execute(
             select(MessageModel)
             .where(MessageModel.session_id == session.id)
+            .where(MessageModel.id != assistant_msg_id)
             .order_by(MessageModel.created_at)
         )
         history = result.scalars().all()
 
     messages = [{"role": m.role, "content": m.content} for m in history]
 
-    # ── 3. Hybrid retrieval ─────────────────────────────────────────────────
+    # ── 4. Hybrid retrieval ─────────────────────────────────────────────────
     retrieved_chunk_ids: list[uuid.UUID] = []
     context_block = ""
     try:
@@ -172,98 +191,137 @@ async def _stream_response(
     if context_block and messages:
         messages[-1]["content"] = messages[-1]["content"] + context_block
 
-    # ── 4. Stream Pi RPC ────────────────────────────────────────────────────
+    # ── 5. Branch on provider: Ollama (direct) vs Cloud (Pi RPC) ─────────────
     full_response = ""
     skill_used: str | None = None
     pi_error: str | None = None
 
-    # Resolve model/base_url for Ollama
-    model = session.llm_model
     if provider == "ollama":
-        # Pi uses the models.json for Ollama routing; pass the model name
-        model = settings.ollama_model if model == "gpt-4o-mini" else model
+        # Direct Ollama integration via OpenAI SDK
+        ollama_base_url = f"{settings.ollama_base_url}/v1"
+        logger.info(f"[OLLAMA_PATH] session.llm_model from DB = {session.llm_model!r}")
+        model = session.llm_model or settings.ollama_model
+        logger.info(f"[OLLAMA_PATH] Using model: {model!r} (source: {'session.llm_model' if session.llm_model else 'config default'})")
 
-    try:
-        async for event in pi_client.run_turn(
-            messages=messages,
-            provider=provider,
-            model=model,
-            api_key=api_key,
-            session_id=str(session.id),
-            timeout_seconds=90.0,
-        ):
-            event_type = event.get("type")
+        try:
+            async for event in run_ollama_turn(
+                messages=messages,
+                base_url=ollama_base_url,
+                model=model,
+                session_id=str(session.id),
+                message_id=str(assistant_msg_id),
+            ):
+                event_type = event.get("type")
 
-            if event_type == "token":
-                token = event.get("content", "")
-                full_response += token
-                yield _sse("message_delta", {"content": token})
+                if event_type == "message_delta":
+                    content = event.get("content", "")
+                    full_response += content
+                    yield _sse("message_delta", {"content": content})
 
-            elif event_type == "tool_call":
-                tool_name = event.get("tool", "")
-                args = event.get("args", {})
-                skill_used = tool_name
-
-                tool_result, artifact_info = await _execute_tool(
-                    tool_name,
-                    args,
-                    session_id=session.id,
-                    message_id=user_message_id,
-                    db_factory=db_factory,
-                )
-
-                if artifact_info and "id" in artifact_info:
+                elif event_type == "artifact_created":
+                    skill_used = "create_artifact"
                     yield _sse("artifact_created", {
-                        "id": artifact_info["id"],
-                        "type": artifact_info["type"],
-                        "title": artifact_info["title"],
-                        "content": artifact_info["content"],
+                        "id": event.get("id"),
+                        "type": event.get("artifact_type"),
+                        "title": event.get("title"),
+                        "content": event.get("content"),
                     })
 
-            elif event_type == "done":
-                full_response = event.get("content", full_response)
-                skill_used = event.get("skill_used", skill_used)
-                break
+                elif event_type == "error":
+                    error_code = event.get("code", "ollama_error")
+                    error_msg = event.get("message", "Ollama error")
+                    yield _sse("error", {"code": error_code, "message": error_msg})
+                    pi_error = error_msg
+                    break
 
-    except PiRPCError as exc:
-        err_msg = str(exc)
-        # Distinguish Ollama-specific errors
-        if "ollama" in err_msg.lower() or "11434" in err_msg:
-            user_msg = "Local model unavailable — is `ollama serve` running?"
-        elif "api key" in err_msg.lower() or "unauthorized" in err_msg.lower():
-            user_msg = f"API key error for provider '{provider}': {err_msg}"
-        else:
-            user_msg = f"Agent error: {err_msg}"
+        except Exception as exc:
+            logger.exception("Unexpected error in Ollama stream")
+            yield _sse("error", {
+                "code": "internal_error",
+                "message": f"Unexpected Ollama error: {exc}",
+            })
+            pi_error = str(exc)
 
-        yield _sse("error", {"code": "agent_error", "message": user_msg})
-        pi_error = err_msg
+    else:
+        # Cloud provider via Pi RPC (OpenAI, Anthropic, etc.)
+        logger.info(f"[PI_RPC_PATH] session.llm_model from DB = {session.llm_model!r}")
+        logger.info(f"[PI_RPC_PATH] Using model: {session.llm_model!r} (source: session.llm_model)")
+        try:
+            async for event in pi_client.run_turn(
+                messages=messages,
+                provider=provider,
+                model=session.llm_model,
+                api_key=api_key,
+                session_id=str(session.id),
+                timeout_seconds=90.0,
+            ):
+                event_type = event.get("type")
 
-    except Exception as exc:
-        logger.exception("Unexpected error in SSE stream")
-        yield _sse("error", {
-            "code": "internal_error",
-            "message": f"Unexpected error: {exc}",
-        })
-        pi_error = str(exc)
+                if event_type == "token":
+                    token = event.get("content", "")
+                    full_response += token
+                    yield _sse("message_delta", {"content": token})
 
-    # ── 5. Persist assistant message ────────────────────────────────────────
-    if full_response or pi_error:
-        async with db_factory() as db:
-            assistant_msg = MessageModel(
-                session_id=session.id,
-                role="assistant",
-                content=full_response or f"[Error: {pi_error}]",
-                skill_used=skill_used,
-                retrieved_chunk_ids=retrieved_chunk_ids,
-            )
-            db.add(assistant_msg)
-            await db.commit()
-            await db.refresh(assistant_msg)
+                elif event_type == "tool_call":
+                    tool_name = event.get("tool", "")
+                    args = event.get("args", {})
+                    skill_used = tool_name
 
-        yield _sse("done", {
-            "message_id": str(assistant_msg.id),
-            "skill_used": skill_used,
-        })
+                    tool_result, artifact_info = await _execute_tool(
+                        tool_name,
+                        args,
+                        session_id=session.id,
+                        message_id=assistant_msg_id,
+                        db_factory=db_factory,
+                    )
+
+                    if artifact_info and "id" in artifact_info:
+                        yield _sse("artifact_created", {
+                            "id": artifact_info["id"],
+                            "type": artifact_info["artifact_type"],
+                            "title": artifact_info["title"],
+                            "content": artifact_info["content"],
+                        })
+
+                elif event_type == "done":
+                    full_response = event.get("content", full_response)
+                    skill_used = event.get("skill_used", skill_used)
+                    break
+
+        except PiRPCError as exc:
+            err_msg = str(exc)
+            if "api key" in err_msg.lower() or "unauthorized" in err_msg.lower():
+                user_msg = f"API key error for provider '{provider}': {err_msg}"
+            else:
+                user_msg = f"Agent error: {err_msg}"
+
+            yield _sse("error", {"code": "agent_error", "message": user_msg})
+            pi_error = err_msg
+
+        except Exception as exc:
+            logger.exception("Unexpected error in Pi RPC stream")
+            yield _sse("error", {
+                "code": "internal_error",
+                "message": f"Unexpected error: {exc}",
+            })
+            pi_error = str(exc)
+
+    # ── 6. Update placeholder assistant message with final content ───────
+    async with db_factory() as db:
+        result = await db.execute(
+            select(MessageModel).where(MessageModel.id == assistant_msg_id)
+        )
+        msg_row = result.scalar_one()
+        msg_row.content = full_response or f"[Error: {pi_error}]"
+        msg_row.skill_used = skill_used
+        msg_row.retrieved_chunk_ids = retrieved_chunk_ids
+        await db.commit()
+
+    yield _sse("done", {
+        "message_id": str(assistant_msg_id),
+        "skill_used": skill_used,
+    })
+
 
 
 # ─── Endpoint ──────────────────────────────────────────────────────────────────
@@ -309,8 +367,8 @@ async def post_message(
         content=body.content,
     )
     db.add(user_msg)
-    await db.flush()
-    await db.refresh(user_msg)
+    await db.commit()          # Commit NOW so _stream_response's separate
+    await db.refresh(user_msg) # DB session can see this row in history.
 
     return StreamingResponse(
         _stream_response(session, body.content, user_msg.id),

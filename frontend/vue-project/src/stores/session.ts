@@ -10,7 +10,7 @@ export interface Message {
   retrieved_chunk_ids?: string[]
   created_at?: string
   isStreaming?: boolean
-  error?: string
+  error?: string | null
 }
 
 export interface Artifact {
@@ -32,6 +32,7 @@ export interface Session {
   created_at: string
   updated_at: string
   messages?: Message[]
+  artifacts?: Artifact[]
 }
 
 export interface HealthInfo {
@@ -125,6 +126,19 @@ export const useSessionStore = defineStore('session', () => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = await res.json()
       activeSession.value = data
+      // Load artifacts from session
+      if (data.artifacts && Array.isArray(data.artifacts)) {
+        artifacts.value = data.artifacts
+        // Set the most recent artifact as active if available
+        if (data.artifacts.length > 0) {
+          activeArtifact.value = data.artifacts[data.artifacts.length - 1]
+        } else {
+          activeArtifact.value = null
+        }
+      } else {
+        artifacts.value = []
+        activeArtifact.value = null
+      }
     } catch (err: any) {
       errorMessage.value = `Failed to load session details: ${err.message}`
     } finally {
@@ -146,6 +160,9 @@ export const useSessionStore = defineStore('session', () => {
       sessions.value.unshift(newSession)
       activeSessionId.value = newSession.id
       activeSession.value = { ...newSession, messages: [] }
+      // Clear artifacts for new session
+      artifacts.value = []
+      activeArtifact.value = null
       return newSession
     } catch (err: any) {
       errorMessage.value = `Failed to create session: ${err.message}`
@@ -169,12 +186,62 @@ export const useSessionStore = defineStore('session', () => {
       activeSession.value.llm_model = updated.llm_model
 
       const sIdx = sessions.value.findIndex(s => s.id === id)
-      if (sIdx !== -1) {
+      if (sIdx !== -1 && sessions.value[sIdx]) {
         sessions.value[sIdx].llm_provider = updated.llm_provider
         sessions.value[sIdx].llm_model = updated.llm_model
       }
     } catch (err: any) {
       errorMessage.value = `Failed to update model config: ${err.message}`
+    }
+  }
+
+  async function renameSession(id: string, newTitle: string) {
+    try {
+      const res = await fetch(`${API_BASE}/sessions/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: newTitle })
+      })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const updated = await res.json()
+
+      // Update local state
+      const sIdx = sessions.value.findIndex(s => s.id === id)
+      if (sIdx !== -1 && sessions.value[sIdx]) {
+        sessions.value[sIdx].title = updated.title
+        sessions.value[sIdx].updated_at = updated.updated_at
+      }
+      if (activeSession.value?.id === id) {
+        activeSession.value.title = updated.title
+        activeSession.value.updated_at = updated.updated_at
+      }
+    } catch (err: any) {
+      errorMessage.value = `Failed to rename session: ${err.message}`
+      throw err
+    }
+  }
+
+  async function deleteSession(id: string) {
+    try {
+      const res = await fetch(`${API_BASE}/sessions/${id}`, {
+        method: 'DELETE'
+      })
+      if (!res.ok && res.status !== 204) throw new Error(`HTTP ${res.status}`)
+
+      // Remove from local state
+      sessions.value = sessions.value.filter(s => s.id !== id)
+
+      // If deleted session was active, switch to another or create new
+      if (activeSessionId.value === id) {
+        if (sessions.value.length > 0 && sessions.value[0]) {
+          await selectSession(sessions.value[0].id)
+        } else {
+          await createSession()
+        }
+      }
+    } catch (err: any) {
+      errorMessage.value = `Failed to delete session: ${err.message}`
+      throw err
     }
   }
 
@@ -258,10 +325,12 @@ export const useSessionStore = defineStore('session', () => {
               if (currentEvent === 'message_delta') {
                 assistantMsg.content += parsed.content || ''
               } else if (currentEvent === 'artifact_created') {
-                addArtifact(parsed)
+                // Map artifact_type to type for compatibility with Artifact interface
+                const artifact = { ...parsed, type: parsed.artifact_type || parsed.type }
+                addArtifact(artifact)
               } else if (currentEvent === 'error') {
-                errorMessage.value = parsed.message
-                assistantMsg.error = parsed.message
+                errorMessage.value = parsed.message || 'Unknown error'
+                assistantMsg.error = parsed.message || 'Unknown error'
               } else if (currentEvent === 'done') {
                 if (parsed.message_id) assistantMsg.id = parsed.message_id
                 if (parsed.skill_used) assistantMsg.skill_used = parsed.skill_used || null
@@ -273,7 +342,7 @@ export const useSessionStore = defineStore('session', () => {
         }
       }
     } catch (err: any) {
-      assistantMsg.error = err.message || 'Stream connection failed'
+      assistantMsg.error = (err.message || 'Stream connection failed') as string | null
       errorMessage.value = assistantMsg.error
     } finally {
       assistantMsg.isStreaming = false
@@ -299,6 +368,8 @@ export const useSessionStore = defineStore('session', () => {
     selectSession,
     createSession,
     updateConfig,
+    renameSession,
+    deleteSession,
     sendMessage,
     addArtifact,
     selectArtifact,

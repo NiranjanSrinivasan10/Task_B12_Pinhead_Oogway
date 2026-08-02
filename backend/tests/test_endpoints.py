@@ -3,9 +3,6 @@ tests/test_endpoints.py
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Offline endpoint tests — validate routing, schema, and error-handling logic
 without a live database.
-
-Run from backend/:
-    .\\venv\\Scripts\\python.exe -m pytest tests/test_endpoints.py -v
 """
 from __future__ import annotations
 
@@ -16,18 +13,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from httpx import AsyncClient, ASGITransport
 
-# ─── Patch DB & pi_client before importing app ─────────────────────────────
-# We must patch before `app` is imported so the startup event doesn't try to
-# connect to a real database.
-
-@pytest.fixture(scope="module", autouse=True)
-def patch_db_and_pi():
-    """Patch DB check and pi_client so tests run without a real Postgres/Node."""
-    with (
-        patch("app.database.check_db_connection", new=AsyncMock(return_value=True)),
-        patch("app.pi_client.PiClient._ensure_process", new=AsyncMock()),
-    ):
-        yield
+from app.database import get_db
 
 
 @pytest.fixture(scope="module")
@@ -85,63 +71,76 @@ async def test_create_session_schema(client):
 
 
 @pytest.mark.anyio
-async def test_create_session_valid_schema(client):
-    """POST /sessions with valid body returns 201 (or 500 if no DB — check schema)."""
-    # When the DB is mocked we get 500 from SQLAlchemy; we just check Pydantic passes.
-    # A full DB-integration test would need a real Postgres.
-    resp = await client.post(
-        "/sessions",
-        json={"title": "My Session", "llm_provider": "openai", "llm_model": "gpt-4o-mini"},
-    )
-    # 201 with mocked DB, or 500 without DB — either way schema was accepted
-    assert resp.status_code in (201, 500)
+async def test_create_session_valid_schema(app, client):
+    """POST /sessions with valid body creates session."""
+    mock_db = AsyncMock()
+    mock_db.add = MagicMock()
+    mock_db.flush = AsyncMock()
+
+    async def fake_refresh(obj):
+        obj.id = uuid.uuid4()
+        obj.created_at = "2026-07-31T12:00:00Z"
+        obj.updated_at = "2026-07-31T12:00:00Z"
+        obj.messages = []
+
+    mock_db.refresh = AsyncMock(side_effect=fake_refresh)
+
+    async def fake_get_db():
+        yield mock_db
+
+    app.dependency_overrides[get_db] = fake_get_db
+
+    try:
+        resp = await client.post(
+            "/sessions",
+            json={"title": "My Session", "llm_provider": "openai", "llm_model": "gpt-4o-mini"},
+        )
+        assert resp.status_code == 201
+        assert resp.json()["title"] == "My Session"
+    finally:
+        app.dependency_overrides.clear()
 
 
 # ─── Missing API key → 422 ─────────────────────────────────────────────────
 
 @pytest.mark.anyio
-async def test_missing_api_key_returns_422(client):
+async def test_missing_api_key_returns_422(app, client):
     """
     POST /sessions/{id}/messages with openai provider but no OPENAI_API_KEY
     must return 422 with code=missing_api_key BEFORE opening an SSE stream.
     """
-    fake_session_id = str(uuid.uuid4())
+    fake_session_id = uuid.uuid4()
     fake_session = MagicMock()
-    fake_session.id = uuid.UUID(fake_session_id)
+    fake_session.id = fake_session_id
     fake_session.llm_provider = "openai"
     fake_session.llm_model = "gpt-4o-mini"
 
-    # Patch the DB call that fetches the session
     mock_result = MagicMock()
     mock_result.scalar_one_or_none.return_value = fake_session
+    mock_db = AsyncMock()
+    mock_db.execute = AsyncMock(return_value=mock_result)
 
-    mock_exec = AsyncMock(return_value=mock_result)
+    async def fake_get_db():
+        yield mock_db
 
-    with (
-        patch("app.routers.messages.settings") as mock_settings,
-        patch("app.routers.messages.get_db"),
-    ):
-        mock_settings.require_provider_key.side_effect = ValueError(
-            "OPENAI_API_KEY is not set."
-        )
-        mock_settings.openai_api_key = ""
+    app.dependency_overrides[get_db] = fake_get_db
 
-        async def fake_get_db():
-            db = AsyncMock()
-            db.execute = mock_exec
-            db.__aenter__ = AsyncMock(return_value=db)
-            db.__aexit__ = AsyncMock(return_value=False)
-            yield db
+    try:
+        with patch("app.routers.messages.settings") as mock_settings:
+            mock_settings.require_provider_key.side_effect = ValueError(
+                "OPENAI_API_KEY is not set."
+            )
+            mock_settings.openai_api_key = ""
 
-        with patch("app.routers.messages.get_db", fake_get_db):
             resp = await client.post(
                 f"/sessions/{fake_session_id}/messages",
                 json={"content": "What is PMF?"},
             )
 
-    assert resp.status_code == 422
-    data = resp.json()
-    assert data["detail"]["code"] == "missing_api_key"
+        assert resp.status_code == 422
+        assert resp.json()["detail"]["code"] == "missing_api_key"
+    finally:
+        app.dependency_overrides.clear()
 
 
 # ─── OpenAPI schema ────────────────────────────────────────────────────────
@@ -168,46 +167,42 @@ async def test_openapi_schema_has_all_routes(client):
 # ─── /sessions/{id} 404 ────────────────────────────────────────────────────
 
 @pytest.mark.anyio
-async def test_get_session_not_found(client):
+async def test_get_session_not_found(app, client):
     """GET /sessions/{random-uuid} should return 404 when session doesn't exist."""
     mock_result = MagicMock()
     mock_result.scalar_one_or_none.return_value = None
-    mock_exec = AsyncMock(return_value=mock_result)
+    mock_db = AsyncMock()
+    mock_db.execute = AsyncMock(return_value=mock_result)
 
     async def fake_get_db():
-        db = AsyncMock()
-        db.execute = mock_exec
-        db.__aenter__ = AsyncMock(return_value=db)
-        db.__aexit__ = AsyncMock(return_value=False)
-        db.commit = AsyncMock()
-        db.rollback = AsyncMock()
-        yield db
+        yield mock_db
 
-    with patch("app.routers.sessions.get_db", fake_get_db):
+    app.dependency_overrides[get_db] = fake_get_db
+
+    try:
         resp = await client.get(f"/sessions/{uuid.uuid4()}")
-
-    assert resp.status_code == 404
-    assert "not found" in resp.json()["detail"].lower()
+        assert resp.status_code == 404
+        assert "not found" in resp.json()["detail"].lower()
+    finally:
+        app.dependency_overrides.clear()
 
 
 # ─── /artifacts/{id} 404 ──────────────────────────────────────────────────
 
 @pytest.mark.anyio
-async def test_get_artifact_not_found(client):
+async def test_get_artifact_not_found(app, client):
     mock_result = MagicMock()
     mock_result.scalar_one_or_none.return_value = None
-    mock_exec = AsyncMock(return_value=mock_result)
+    mock_db = AsyncMock()
+    mock_db.execute = AsyncMock(return_value=mock_result)
 
     async def fake_get_db():
-        db = AsyncMock()
-        db.execute = mock_exec
-        db.__aenter__ = AsyncMock(return_value=db)
-        db.__aexit__ = AsyncMock(return_value=False)
-        db.commit = AsyncMock()
-        db.rollback = AsyncMock()
-        yield db
+        yield mock_db
 
-    with patch("app.routers.artifacts.get_db", fake_get_db):
+    app.dependency_overrides[get_db] = fake_get_db
+
+    try:
         resp = await client.get(f"/artifacts/{uuid.uuid4()}")
-
-    assert resp.status_code == 404
+        assert resp.status_code == 404
+    finally:
+        app.dependency_overrides.clear()

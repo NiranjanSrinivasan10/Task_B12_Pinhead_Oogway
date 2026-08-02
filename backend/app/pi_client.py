@@ -42,6 +42,20 @@ class PiClient:
         self._lock = asyncio.Lock()
         self._req_counter = 0
 
+    async def _log_stderr(self) -> None:
+        """Continuously read and log stderr from the Pi subprocess."""
+        if not self._proc or not self._proc.stderr:
+            return
+
+        try:
+            while True:
+                line = await self._proc.stderr.readline()
+                if not line:
+                    break
+                logger.info("Pi RPC stderr: %s", line.decode().strip())
+        except Exception as exc:
+            logger.warning("Error reading Pi RPC stderr: %s", exc)
+
     async def _ensure_process(self) -> asyncio.subprocess.Process:
         """Start or restart the Pi Node RPC subprocess if not running."""
         if self._proc is not None and self._proc.returncode is None:
@@ -75,7 +89,11 @@ class PiClient:
                 stderr=asyncio.subprocess.PIPE,
                 env=os.environ.copy(),
             )
-            # Read startup line
+
+            # Start a background task to log stderr continuously
+            asyncio.create_task(self._log_stderr())
+
+            # Read startup line from stdout
             if self._proc.stdout:
                 line = await asyncio.wait_for(self._proc.stdout.readline(), timeout=10.0)
                 logger.info("Pi RPC startup output: %s", line.decode().strip())
@@ -92,8 +110,9 @@ class PiClient:
                     stderr_out = err_bytes.decode()
                 except Exception:
                     pass
-            logger.error("Pi RPC process startup exception: %s | Stderr: %s", exc, stderr_out)
-            raise PiRPCError(f"Failed to start Pi RPC subprocess: {exc} {stderr_out}") from exc
+            exc_desc = f"{type(exc).__name__}: {exc}" if str(exc) else repr(exc)
+            logger.error("Pi RPC process startup exception: %s | Stderr: %s", exc_desc, stderr_out)
+            raise PiRPCError(f"Failed to start Pi RPC subprocess: {exc_desc} {stderr_out}") from exc
 
     async def run_turn(
         self,
@@ -125,6 +144,9 @@ class PiClient:
                 "model": model,
                 "api_key": api_key,
             }
+
+            # Log the exact provider string being sent for debugging
+            logger.info("Sending Pi RPC request: provider=%r, model=%r, session_id=%s", provider, model, session_id)
 
             assert proc.stdin is not None
             assert proc.stdout is not None

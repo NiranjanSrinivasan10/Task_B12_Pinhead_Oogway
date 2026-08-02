@@ -2,24 +2,27 @@
 chunker.py
 ~~~~~~~~~~
 Split transcript bodies into overlapping chunks of ~500-800 tokens,
-preserving paragraph boundaries where possible.
+preserving paragraph and sentence boundaries where possible.
 
 Uses tiktoken (cl100k_base encoding) for accurate token counting.
 
 Strategy:
   1. Split on double-newlines to get paragraph-level blocks.
-  2. Greedily accumulate paragraphs until adding the next would exceed
-     MAX_TOKENS.  Emit the accumulated text as a chunk.
-  3. Roll back by OVERLAP_TOKENS worth of trailing paragraphs to start
-     the next chunk — this gives contextual overlap at paragraph
+  2. If a single paragraph exceeds MAX_TOKENS, split it into sentences and
+     greedily group sentences up to MAX_TOKENS per block.
+  3. If a single sentence exceeds MAX_TOKENS on its own, hard-split it
+     by token count (unavoidable for extremely long single sentences).
+  4. Greedily accumulate blocks until adding the next would exceed
+     MAX_TOKENS. Emit the accumulated text as a chunk.
+  5. Roll back by OVERLAP_TOKENS worth of trailing blocks to start
+     the next chunk — this gives contextual overlap at sentence/paragraph
      boundaries rather than mid-sentence.
-  4. If a single paragraph exceeds MAX_TOKENS on its own, hard-split it
-     by token count (unavoidable for very long paragraphs).
 """
 
 from __future__ import annotations
 
 import logging
+import re
 from dataclasses import dataclass
 
 import tiktoken
@@ -28,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 # ── Tunables ────────────────────────────────────────────────────
 MAX_TOKENS = 700       # target ceiling per chunk
-MIN_TOKENS = 300       # avoid emitting very short chunks
+MIN_TOKENS = 300       # avoid emitting very short chunks (NOTE: currently unused in chunk_transcript)
 OVERLAP_TOKENS = 100   # overlap between consecutive chunks
 # ────────────────────────────────────────────────────────────────
 
@@ -48,7 +51,7 @@ class Chunk:
 
 
 def _hard_split(text: str, max_tokens: int) -> list[str]:
-    """Split a single oversized paragraph into token-bounded pieces."""
+    """Split a single oversized element into token-bounded pieces."""
     tokens = _enc.encode(text)
     pieces: list[str] = []
     for i in range(0, len(tokens), max_tokens):
@@ -56,19 +59,49 @@ def _hard_split(text: str, max_tokens: int) -> list[str]:
     return pieces
 
 
+def _split_by_sentence(text: str) -> list[str]:
+    """Split text into sentences using punctuation lookbehind regex."""
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    return [s.strip() for s in sentences if s.strip()]
+
+
 def chunk_transcript(body: str) -> list[Chunk]:
-    """Split *body* into overlapping chunks.
+    """Split *body* into overlapping chunks using paragraph -> sentence -> token hierarchy.
 
     Returns a list of Chunk objects ordered by index.
     """
     # 1. Split into paragraph-level blocks.
     paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
 
-    # Expand any single paragraph that exceeds MAX_TOKENS.
+    # Expand any single paragraph that exceeds MAX_TOKENS via sentence-level splitting.
     blocks: list[str] = []
     for para in paragraphs:
         if _token_len(para) > MAX_TOKENS:
-            blocks.extend(_hard_split(para, MAX_TOKENS))
+            sentences = _split_by_sentence(para)
+            curr_sent_group: list[str] = []
+            curr_sent_tokens = 0
+
+            for sent in sentences:
+                sent_len = _token_len(sent)
+                if sent_len > MAX_TOKENS:
+                    # Flush accumulated sentence group first
+                    if curr_sent_group:
+                        blocks.append(" ".join(curr_sent_group))
+                        curr_sent_group = []
+                        curr_sent_tokens = 0
+                    # Single sentence exceeds MAX_TOKENS -> fallback to hard split
+                    blocks.extend(_hard_split(sent, MAX_TOKENS))
+                else:
+                    if curr_sent_tokens + sent_len > MAX_TOKENS and curr_sent_group:
+                        blocks.append(" ".join(curr_sent_group))
+                        curr_sent_group = [sent]
+                        curr_sent_tokens = sent_len
+                    else:
+                        curr_sent_group.append(sent)
+                        curr_sent_tokens += sent_len
+
+            if curr_sent_group:
+                blocks.append(" ".join(curr_sent_group))
         else:
             blocks.append(para)
 
@@ -106,6 +139,7 @@ def chunk_transcript(body: str) -> list[Chunk]:
                 rollback += 1
                 if overlap_tokens >= OVERLAP_TOKENS:
                     break
+            rollback = min(rollback, len(current_parts) - 1)
             idx -= rollback
 
     logger.debug(

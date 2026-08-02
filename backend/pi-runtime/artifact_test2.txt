@@ -1,0 +1,2232 @@
+event: artifact_created
+data: {"id": "c1ae852a-4f4d-4fb8-a5a0-5ed265bfc32a", "type": "html", "title": "Pricing Guide", "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Pricing Guide</title>\n    <style>\n        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }\n        h1 { color: #333; }\n        h2 { color: #555; }\n        p { margin: 10px 0; }\n        ul { margin: 10px 0; padding: 10px; border-left: 2px solid #007BFF; }\n        li { margin: 5px 0; }\n    </style>\n</head>\n<body>\n    <h1>Pricing Guide</h1>\n    <p>Pricing is a crucial aspect of your business strategy and can greatly impact your product's success. This guide highlights effective pricing strategies and insights based on discussions with industry leaders such as Madhavan Ramanujam and others.</p>\n\n    <h2>1. The Importance of Pricing Contextualization</h2>\n    <p>Madhavan Ramanujam highlights the significance of contextualizing pricing to tell a value story. For instance, Superhuman effectively priced their service at $30/month by framing it as a $1/day investment for reclaiming productivity, making the cost seem insignificant compared to the value provided.</p>\n\n    <h2>2. Beautifully Simple Pricing</h2>\n    <p>Creating straightforward pricing structures helps customers understand the value immediately. Simple pricing can facilitate quick decisions. Consider examples like Prime's features or the Subway $5 footlong to illustrate simple value propositions.</p>\n\n    <h2>3. Iterative Pricing Strategy</h2>\n    <p>Naomi Ionita stresses the importance of treating pricing as an evolving process. Review your pricing strategy regularly, especially after product updates or when introducing new features. Form a cross-functional pricing committee for diverse input on pricing decisions.</p>\n\n    <h2>4. Mastering Negotiations</h2>\n    <p>During the scale-up phase, it\u2019s essential to hone negotiation skills. Understand the dynamics of value selling, mastering both gives and gets. Develop strategies that facilitate effective pricing discussions, especially in B2B contexts.</p>\n\n    <h2>5. Embrace the Freemium Model Carefully</h2>\n    <p>Freemium pricing can be beneficial for user acquisition. As Lauryn Isford explains, allow users to engage with your product without upfront costs, creating loyalty and showcasing value before monetization discussions begin.</p>\n\n    <h2>6. Pricing as a Product</h2>\n    <p>Jeanne Grosser emphasizes that pricing should be treated like a product. Understand the value drivers for customers and align pricing accordingly. Revisit pricing setups when adding functionalities or changing markets to adapt to customer expectations.</p>\n\n    <h2>Conclusion</h2>\n    <p>Effective pricing strategies are integral to the success of any product. By contextualizing pricing in terms of value, maintaining simplicity, iterating based on user feedback, and fostering a culture of collaboration, businesses can optimize their pricing approach to enhance customer satisfaction and drive growth.</p>\n</body>\n</html>"}
+
+event: message_delta
+data: {"content": "Here"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " **"}
+
+event: message_delta
+data: {"content": "Pricing"}
+
+event: message_delta
+data: {"content": " Guide"}
+
+event: message_delta
+data: {"content": "**"}
+
+event: message_delta
+data: {"content": " HTML"}
+
+event: message_delta
+data: {"content": " artifact"}
+
+event: message_delta
+data: {"content": " you"}
+
+event: message_delta
+data: {"content": " requested"}
+
+event: message_delta
+data: {"content": ":\n\n"}
+
+event: message_delta
+data: {"content": "```"}
+
+event: message_delta
+data: {"content": "html"}
+
+event: message_delta
+data: {"content": "\n"}
+
+event: message_delta
+data: {"content": "<!"}
+
+event: message_delta
+data: {"content": "DOCTYPE"}
+
+event: message_delta
+data: {"content": " html"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "<html"}
+
+event: message_delta
+data: {"content": " lang"}
+
+event: message_delta
+data: {"content": "=\""}
+
+event: message_delta
+data: {"content": "en"}
+
+event: message_delta
+data: {"content": "\">\n"}
+
+event: message_delta
+data: {"content": "<head"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "meta"}
+
+event: message_delta
+data: {"content": " charset"}
+
+event: message_delta
+data: {"content": "=\""}
+
+event: message_delta
+data: {"content": "UTF"}
+
+event: message_delta
+data: {"content": "-"}
+
+event: message_delta
+data: {"content": "8"}
+
+event: message_delta
+data: {"content": "\">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "meta"}
+
+event: message_delta
+data: {"content": " name"}
+
+event: message_delta
+data: {"content": "=\""}
+
+event: message_delta
+data: {"content": "viewport"}
+
+event: message_delta
+data: {"content": "\""}
+
+event: message_delta
+data: {"content": " content"}
+
+event: message_delta
+data: {"content": "=\""}
+
+event: message_delta
+data: {"content": "width"}
+
+event: message_delta
+data: {"content": "=device"}
+
+event: message_delta
+data: {"content": "-width"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " initial"}
+
+event: message_delta
+data: {"content": "-scale"}
+
+event: message_delta
+data: {"content": "="}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "0"}
+
+event: message_delta
+data: {"content": "\">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "title"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Pricing"}
+
+event: message_delta
+data: {"content": " Guide"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "title"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "style"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "       "}
+
+event: message_delta
+data: {"content": " body"}
+
+event: message_delta
+data: {"content": " {"}
+
+event: message_delta
+data: {"content": " font"}
+
+event: message_delta
+data: {"content": "-family"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " Arial"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " sans"}
+
+event: message_delta
+data: {"content": "-serif"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " line"}
+
+event: message_delta
+data: {"content": "-height"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": "6"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " padding"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "20"}
+
+event: message_delta
+data: {"content": "px"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " }\n"}
+
+event: message_delta
+data: {"content": "       "}
+
+event: message_delta
+data: {"content": " h"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": " {"}
+
+event: message_delta
+data: {"content": " color"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " #"}
+
+event: message_delta
+data: {"content": "333"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " }\n"}
+
+event: message_delta
+data: {"content": "       "}
+
+event: message_delta
+data: {"content": " h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": " {"}
+
+event: message_delta
+data: {"content": " color"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " #"}
+
+event: message_delta
+data: {"content": "555"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " }\n"}
+
+event: message_delta
+data: {"content": "       "}
+
+event: message_delta
+data: {"content": " p"}
+
+event: message_delta
+data: {"content": " {"}
+
+event: message_delta
+data: {"content": " margin"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "10"}
+
+event: message_delta
+data: {"content": "px"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "0"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " }\n"}
+
+event: message_delta
+data: {"content": "       "}
+
+event: message_delta
+data: {"content": " ul"}
+
+event: message_delta
+data: {"content": " {"}
+
+event: message_delta
+data: {"content": " margin"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "10"}
+
+event: message_delta
+data: {"content": "px"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "0"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " padding"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "10"}
+
+event: message_delta
+data: {"content": "px"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " border"}
+
+event: message_delta
+data: {"content": "-left"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "px"}
+
+event: message_delta
+data: {"content": " solid"}
+
+event: message_delta
+data: {"content": " #"}
+
+event: message_delta
+data: {"content": "007"}
+
+event: message_delta
+data: {"content": "B"}
+
+event: message_delta
+data: {"content": "FF"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " }\n"}
+
+event: message_delta
+data: {"content": "       "}
+
+event: message_delta
+data: {"content": " li"}
+
+event: message_delta
+data: {"content": " {"}
+
+event: message_delta
+data: {"content": " margin"}
+
+event: message_delta
+data: {"content": ":"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "5"}
+
+event: message_delta
+data: {"content": "px"}
+
+event: message_delta
+data: {"content": " "}
+
+event: message_delta
+data: {"content": "0"}
+
+event: message_delta
+data: {"content": ";"}
+
+event: message_delta
+data: {"content": " }\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " </"}
+
+event: message_delta
+data: {"content": "style"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "head"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "<body"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Pricing"}
+
+event: message_delta
+data: {"content": " Guide"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Pricing"}
+
+event: message_delta
+data: {"content": " is"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " crucial"}
+
+event: message_delta
+data: {"content": " aspect"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " business"}
+
+event: message_delta
+data: {"content": " strategy"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " greatly"}
+
+event: message_delta
+data: {"content": " impact"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": "'s"}
+
+event: message_delta
+data: {"content": " success"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " This"}
+
+event: message_delta
+data: {"content": " guide"}
+
+event: message_delta
+data: {"content": " highlights"}
+
+event: message_delta
+data: {"content": " effective"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " strategies"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " insights"}
+
+event: message_delta
+data: {"content": " based"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " discussions"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " industry"}
+
+event: message_delta
+data: {"content": " leaders"}
+
+event: message_delta
+data: {"content": " such"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " Madh"}
+
+event: message_delta
+data: {"content": "avan"}
+
+event: message_delta
+data: {"content": " Ram"}
+
+event: message_delta
+data: {"content": "anu"}
+
+event: message_delta
+data: {"content": "jam"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " others"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " The"}
+
+event: message_delta
+data: {"content": " Importance"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " Pricing"}
+
+event: message_delta
+data: {"content": " Context"}
+
+event: message_delta
+data: {"content": "ual"}
+
+event: message_delta
+data: {"content": "ization"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">M"}
+
+event: message_delta
+data: {"content": "adh"}
+
+event: message_delta
+data: {"content": "avan"}
+
+event: message_delta
+data: {"content": " Ram"}
+
+event: message_delta
+data: {"content": "anu"}
+
+event: message_delta
+data: {"content": "jam"}
+
+event: message_delta
+data: {"content": " highlights"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " significance"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " contextual"}
+
+event: message_delta
+data: {"content": "izing"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " tell"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " story"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " For"}
+
+event: message_delta
+data: {"content": " instance"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " Super"}
+
+event: message_delta
+data: {"content": "human"}
+
+event: message_delta
+data: {"content": " effectively"}
+
+event: message_delta
+data: {"content": " priced"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " service"}
+
+event: message_delta
+data: {"content": " at"}
+
+event: message_delta
+data: {"content": " $"}
+
+event: message_delta
+data: {"content": "30"}
+
+event: message_delta
+data: {"content": "/month"}
+
+event: message_delta
+data: {"content": " by"}
+
+event: message_delta
+data: {"content": " framing"}
+
+event: message_delta
+data: {"content": " it"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " $"}
+
+event: message_delta
+data: {"content": "1"}
+
+event: message_delta
+data: {"content": "/day"}
+
+event: message_delta
+data: {"content": " investment"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " reclaim"}
+
+event: message_delta
+data: {"content": "ing"}
+
+event: message_delta
+data: {"content": " productivity"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " making"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " cost"}
+
+event: message_delta
+data: {"content": " seem"}
+
+event: message_delta
+data: {"content": " insignificant"}
+
+event: message_delta
+data: {"content": " compared"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " provided"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Beautiful"}
+
+event: message_delta
+data: {"content": "ly"}
+
+event: message_delta
+data: {"content": " Simple"}
+
+event: message_delta
+data: {"content": " Pricing"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Creating"}
+
+event: message_delta
+data: {"content": " straightforward"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " structures"}
+
+event: message_delta
+data: {"content": " helps"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " understand"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " immediately"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Simple"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " facilitate"}
+
+event: message_delta
+data: {"content": " quick"}
+
+event: message_delta
+data: {"content": " decisions"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Consider"}
+
+event: message_delta
+data: {"content": " examples"}
+
+event: message_delta
+data: {"content": " like"}
+
+event: message_delta
+data: {"content": " Prime"}
+
+event: message_delta
+data: {"content": "'s"}
+
+event: message_delta
+data: {"content": " features"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " Subway"}
+
+event: message_delta
+data: {"content": " $"}
+
+event: message_delta
+data: {"content": "5"}
+
+event: message_delta
+data: {"content": " foot"}
+
+event: message_delta
+data: {"content": "long"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " illustrate"}
+
+event: message_delta
+data: {"content": " simple"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " propositions"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "3"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Iter"}
+
+event: message_delta
+data: {"content": "ative"}
+
+event: message_delta
+data: {"content": " Pricing"}
+
+event: message_delta
+data: {"content": " Strategy"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Na"}
+
+event: message_delta
+data: {"content": "omi"}
+
+event: message_delta
+data: {"content": " Ion"}
+
+event: message_delta
+data: {"content": "ita"}
+
+event: message_delta
+data: {"content": " stresses"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " importance"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " treating"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " an"}
+
+event: message_delta
+data: {"content": " evolving"}
+
+event: message_delta
+data: {"content": " process"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Review"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " strategy"}
+
+event: message_delta
+data: {"content": " regularly"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " especially"}
+
+event: message_delta
+data: {"content": " after"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " updates"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " when"}
+
+event: message_delta
+data: {"content": " introducing"}
+
+event: message_delta
+data: {"content": " new"}
+
+event: message_delta
+data: {"content": " features"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Form"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " cross"}
+
+event: message_delta
+data: {"content": "-functional"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " committee"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " diverse"}
+
+event: message_delta
+data: {"content": " input"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " decisions"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "4"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Master"}
+
+event: message_delta
+data: {"content": "ing"}
+
+event: message_delta
+data: {"content": " Negoti"}
+
+event: message_delta
+data: {"content": "ations"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "During"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " scale"}
+
+event: message_delta
+data: {"content": "-up"}
+
+event: message_delta
+data: {"content": " phase"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " it"}
+
+event: message_delta
+data: {"content": "\u2019s"}
+
+event: message_delta
+data: {"content": " essential"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " hone"}
+
+event: message_delta
+data: {"content": " negotiation"}
+
+event: message_delta
+data: {"content": " skills"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Understand"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " dynamics"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " selling"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " mastering"}
+
+event: message_delta
+data: {"content": " both"}
+
+event: message_delta
+data: {"content": " gives"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " gets"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Develop"}
+
+event: message_delta
+data: {"content": " strategies"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " facilitate"}
+
+event: message_delta
+data: {"content": " effective"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " discussions"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " especially"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " B"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": "B"}
+
+event: message_delta
+data: {"content": " contexts"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "5"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Em"}
+
+event: message_delta
+data: {"content": "brace"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " Fre"}
+
+event: message_delta
+data: {"content": "em"}
+
+event: message_delta
+data: {"content": "ium"}
+
+event: message_delta
+data: {"content": " Model"}
+
+event: message_delta
+data: {"content": " Carefully"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Fre"}
+
+event: message_delta
+data: {"content": "em"}
+
+event: message_delta
+data: {"content": "ium"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " be"}
+
+event: message_delta
+data: {"content": " beneficial"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " user"}
+
+event: message_delta
+data: {"content": " acquisition"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " As"}
+
+event: message_delta
+data: {"content": " Laur"}
+
+event: message_delta
+data: {"content": "yn"}
+
+event: message_delta
+data: {"content": " Is"}
+
+event: message_delta
+data: {"content": "ford"}
+
+event: message_delta
+data: {"content": " explains"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " allow"}
+
+event: message_delta
+data: {"content": " users"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " engage"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " your"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": " without"}
+
+event: message_delta
+data: {"content": " upfront"}
+
+event: message_delta
+data: {"content": " costs"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " creating"}
+
+event: message_delta
+data: {"content": " loyalty"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " showcasing"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " before"}
+
+event: message_delta
+data: {"content": " monet"}
+
+event: message_delta
+data: {"content": "ization"}
+
+event: message_delta
+data: {"content": " discussions"}
+
+event: message_delta
+data: {"content": " begin"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "6"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Pricing"}
+
+event: message_delta
+data: {"content": " as"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " Product"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Je"}
+
+event: message_delta
+data: {"content": "anne"}
+
+event: message_delta
+data: {"content": " Gros"}
+
+event: message_delta
+data: {"content": "ser"}
+
+event: message_delta
+data: {"content": " emphasizes"}
+
+event: message_delta
+data: {"content": " that"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " should"}
+
+event: message_delta
+data: {"content": " be"}
+
+event: message_delta
+data: {"content": " treated"}
+
+event: message_delta
+data: {"content": " like"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Understand"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": " drivers"}
+
+event: message_delta
+data: {"content": " for"}
+
+event: message_delta
+data: {"content": " customers"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " align"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " accordingly"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Re"}
+
+event: message_delta
+data: {"content": "visit"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " setups"}
+
+event: message_delta
+data: {"content": " when"}
+
+event: message_delta
+data: {"content": " adding"}
+
+event: message_delta
+data: {"content": " functionalities"}
+
+event: message_delta
+data: {"content": " or"}
+
+event: message_delta
+data: {"content": " changing"}
+
+event: message_delta
+data: {"content": " markets"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " adapt"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " expectations"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Conclusion"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "h"}
+
+event: message_delta
+data: {"content": "2"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "   "}
+
+event: message_delta
+data: {"content": " <"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">"}
+
+event: message_delta
+data: {"content": "Effective"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " strategies"}
+
+event: message_delta
+data: {"content": " are"}
+
+event: message_delta
+data: {"content": " integral"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " success"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " any"}
+
+event: message_delta
+data: {"content": " product"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " By"}
+
+event: message_delta
+data: {"content": " contextual"}
+
+event: message_delta
+data: {"content": "izing"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " terms"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " value"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " maintaining"}
+
+event: message_delta
+data: {"content": " simplicity"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " iter"}
+
+event: message_delta
+data: {"content": "ating"}
+
+event: message_delta
+data: {"content": " based"}
+
+event: message_delta
+data: {"content": " on"}
+
+event: message_delta
+data: {"content": " user"}
+
+event: message_delta
+data: {"content": " feedback"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " fostering"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " culture"}
+
+event: message_delta
+data: {"content": " of"}
+
+event: message_delta
+data: {"content": " collaboration"}
+
+event: message_delta
+data: {"content": ","}
+
+event: message_delta
+data: {"content": " businesses"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " optimize"}
+
+event: message_delta
+data: {"content": " their"}
+
+event: message_delta
+data: {"content": " pricing"}
+
+event: message_delta
+data: {"content": " approach"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " enhance"}
+
+event: message_delta
+data: {"content": " customer"}
+
+event: message_delta
+data: {"content": " satisfaction"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " drive"}
+
+event: message_delta
+data: {"content": " growth"}
+
+event: message_delta
+data: {"content": ".</"}
+
+event: message_delta
+data: {"content": "p"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "body"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "</"}
+
+event: message_delta
+data: {"content": "html"}
+
+event: message_delta
+data: {"content": ">\n"}
+
+event: message_delta
+data: {"content": "``"}
+
+event: message_delta
+data: {"content": "`\n\n"}
+
+event: message_delta
+data: {"content": "You"}
+
+event: message_delta
+data: {"content": " can"}
+
+event: message_delta
+data: {"content": " copy"}
+
+event: message_delta
+data: {"content": " this"}
+
+event: message_delta
+data: {"content": " HTML"}
+
+event: message_delta
+data: {"content": " content"}
+
+event: message_delta
+data: {"content": " into"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " file"}
+
+event: message_delta
+data: {"content": " with"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " `."}
+
+event: message_delta
+data: {"content": "html"}
+
+event: message_delta
+data: {"content": "`"}
+
+event: message_delta
+data: {"content": " extension"}
+
+event: message_delta
+data: {"content": " and"}
+
+event: message_delta
+data: {"content": " open"}
+
+event: message_delta
+data: {"content": " it"}
+
+event: message_delta
+data: {"content": " in"}
+
+event: message_delta
+data: {"content": " a"}
+
+event: message_delta
+data: {"content": " web"}
+
+event: message_delta
+data: {"content": " browser"}
+
+event: message_delta
+data: {"content": " to"}
+
+event: message_delta
+data: {"content": " view"}
+
+event: message_delta
+data: {"content": " the"}
+
+event: message_delta
+data: {"content": " formatted"}
+
+event: message_delta
+data: {"content": " guide"}
+
+event: message_delta
+data: {"content": "."}
+
+event: message_delta
+data: {"content": " Let"}
+
+event: message_delta
+data: {"content": " me"}
+
+event: message_delta
+data: {"content": " know"}
+
+event: message_delta
+data: {"content": " if"}
+
+event: message_delta
+data: {"content": " you"}
+
+event: message_delta
+data: {"content": " need"}
+
+event: message_delta
+data: {"content": " any"}
+
+event: message_delta
+data: {"content": " adjustments"}
+
+event: message_delta
+data: {"content": "!"}
+
+event: done
+data: {"message_id": "e8c3730a-be33-4d63-8863-00c77f307344", "skill_used": "create_artifact"}
+

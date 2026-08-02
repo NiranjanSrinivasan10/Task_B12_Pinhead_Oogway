@@ -23,13 +23,16 @@ from pydantic import BaseModel, Field, field_validator
 class SessionCreate(BaseModel):
     title: str = Field(default="New Chat", max_length=200)
     llm_provider: Literal["openai", "anthropic", "ollama"] = "openai"
-    llm_model: str = Field(default="gpt-4o-mini", max_length=100)
+    llm_model: str = Field(default="gpt-4o-mini", max_length=200)
 
 
 class SessionConfigPatch(BaseModel):
     llm_provider: Optional[Literal["openai", "anthropic", "ollama"]] = None
-    llm_model: Optional[str] = Field(default=None, max_length=100)
-    title: Optional[str] = Field(default=None, max_length=200)
+    llm_model: Optional[str] = Field(default=None, max_length=200)
+
+
+class SessionTitlePatch(BaseModel):
+    title: str = Field(..., min_length=1, max_length=200)
 
 
 class MessageOut(BaseModel):
@@ -65,6 +68,7 @@ class SessionOut(BaseModel):
     created_at: datetime
     updated_at: datetime
     messages: List[MessageOut] = []
+    artifacts: List[ArtifactOut] = []
 
     model_config = {"from_attributes": True}
 
