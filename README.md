@@ -2,149 +2,186 @@
 
 A full-stack RAG chatbot and agentic growth assistant grounded strictly in **300+ Lenny's Podcast transcripts**. Supports both Cloud LLM (OpenAI `gpt-4o-mini` / Anthropic) and Local LLM (Ollama `llama3.1:8b`) with multi-provider model switching, hybrid topic-tag + pgvector retrieval, and live sandboxed artifact rendering.
 
----
+## Project Overview
 
-## 🏗️ Architecture Overview
+The Lenny Growth Assistant is a single-user RAG application that lets product managers and founders ask grounded questions about growth tactics, convert answers into Ship30for30-style essays, and generate live-rendered markdown or HTML artifacts. It features a dual-path LLM architecture: cloud providers (OpenAI/Anthropic) use the Pi Coding Agent via JSON-RPC, while the local Ollama path integrates directly via the OpenAI SDK to bypass Pi's provider limitations. All retrieval uses a single local embedding model (`sentence-transformers/all-MiniLM-L6-v2`) for vector-space consistency across both modes.
+
+## Architecture Overview
+
+The system uses a three-tier architecture with a deliberate dual-path design for LLM providers:
 
 ```
 Vue 3 + TS Frontend  <--REST/SSE-->  FastAPI Backend  <--JSON-RPC/stdio-->  Pi Subprocess (Node)
   (Vite + Tailwind)                      |                                       |
                                          v                                       v
-                                Supabase Postgres                   Anthropic / OpenAI / Ollama
-                                  (+ pgvector)
+                                Supabase Postgres                   OpenAI / Anthropic (cloud)
+                                  (+ pgvector)                         (via Pi RPC)
+                                                                             |
+                                                                             v
+                                                                      Ollama (local)
+                                                                   (direct integration,
+                                                                    bypasses Pi)
 ```
 
-- **Frontend**: Vue 3 + TypeScript + Tailwind CSS (v4) + Pinia store + `marked` (GFM markdown rendering) + Sandboxed `<iframe>` HTML viewer.
-- **Backend**: FastAPI (Python 3.12) with SQLAlchemy async sessions and Pydantic validation.
-- **Agent Orchestration**: Pi Coding Agent (Node.js JSON-RPC subprocess over stdio) executing 3 custom tools (`search_transcripts`, `generate_ship30_essay`, `create_artifact`).
-- **Database & Vectors**: Supabase Postgres + `pgvector` (`vector(384)`) using local `sentence-transformers/all-MiniLM-L6-v2` embeddings for vector-space consistency across both cloud and local modes.
+**Key architectural decisions:**
 
----
+- **Dual-path LLM integration**: Cloud providers (OpenAI, Anthropic) use the Pi Coding Agent subprocess for agentic tool-calling. Local Ollama integrates directly via the OpenAI Python SDK pointed at Ollama's OpenAI-compatible endpoint. This bypasses Pi's `getModel` limitation (it only supports built-in providers, not custom ones like Ollama) while reusing the same tool contracts.
 
-## 🚀 Quickstart Guide
+- **Single local embedding model**: `sentence-transformers/all-MiniLM-L6-v2` (384 dims) is used for both ingestion and query-time retrieval, regardless of which chat LLM is active. This keeps the local/offline demo path fully free of cloud dependencies and guarantees vector-space consistency.
 
-### 1. Database Setup (Supabase)
-Run the migration script in your Supabase SQL Editor:
-```sql
--- Located in backend/migrations/001_init.sql
+- **Hybrid retrieval**: Topic-tag pre-filter (from the repo's pre-built index files) → pgvector cosine similarity on filtered chunks → full-corpus fallback if needed.
+
+- **Three tools only**: `search_transcripts`, `generate_ship30_essay`, `create_artifact`. Default Pi file/bash tools are explicitly disabled.
+
+For full architectural details, see [ARCHITECTURE.md](ARCHITECTURE.md).
+
+## Local Setup Instructions
+
+### 1. Clone the Repository
+
+```powershell
+git clone <repository-url>
+cd task_assessment_for_pinhead_b12_and_oogway
 ```
-This enables `vector`, `uuid-ossp`, and creates `episodes`, `chunks`, `sessions`, `messages`, and `artifacts` tables.
 
 ### 2. Backend Setup
+
 ```powershell
 cd backend
 
-# Create & activate venv
+# Create Python virtual environment
 python -m venv venv
+
+# Activate virtual environment (Windows)
 .\venv\Scripts\activate
 
-# Install dependencies
+# Install Python dependencies
 pip install -r requirements.txt
-
-# Configure .env
-cp .env.example .env
 ```
 
-Edit `backend/.env`:
+### 3. Database Setup (Supabase)
+
+1. Create a Supabase project at [supabase.com](https://supabase.com)
+2. Open the SQL Editor in your Supabase dashboard
+3. Run the migration script located at `backend/migrations/001_init.sql`
+
+**Note**: Supabase will show a warning about RLS (Row Level Security) being disabled. This is safe to ignore for this single-user local application—the app never uses Supabase's public anon/authenticated API, only the direct connection string.
+
+### 4. Environment Configuration
+
+```powershell
+# Copy the example environment file
+copy .env.example .env
+```
+
+Edit `backend/.env` with your actual values:
+
 ```env
+# Required: Supabase database connection string
 SUPABASE_DB_URL=postgresql+asyncpg://postgres:YOUR_PASSWORD@db.YOUR_PROJECT_REF.supabase.co:5432/postgres
-OPENAI_API_KEY=sk-proj-YOUR_KEY
+
+# Required for cloud OpenAI path
+OPENAI_API_KEY=sk-proj-YOUR_OPENAI_KEY
+
+# Optional: Anthropic API key (if using Anthropic provider)
+ANTHROPIC_API_KEY=sk-ant-YOUR_ANTHROPIC_KEY
+
+# Ollama configuration (local LLM)
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=llama3.1:8b
 ```
 
-### 3. Run Ingestion (Load Transcripts into Supabase)
-```powershell
-python -m app.ingestion.run_ingestion
-```
+**Important**: Do not commit `.env` to version control—it contains sensitive API keys and is already git-ignored.
 
-### 4. Build Pi Runtime Subprocess
+### 5. Build Pi Runtime Subprocess
+
+The Pi Coding Agent is a Node.js subprocess used for cloud provider tool-calling:
+
 ```powershell
-cd backend/pi-runtime
+cd backend\pi-runtime
 npm install
 npm run build
 ```
 
-### 5. Launch Servers
-- **Backend**: `python run.py` (from `backend/`)
-- **Frontend**: `npm run dev` (from `frontend/vue-project/`)
-- Open browser at `http://localhost:5173/`
-
----
-
-## 🔍 Health Check Behavior & Lazy-Start Subprocess (PRD Scenario 8)
-
-When calling `GET /health` immediately after launching the backend server:
-
-```json
-{
-  "status": "degraded",
-  "db": true,
-  "ollama": true,
-  "pi_subprocess": false,
-  "details": {
-    "ollama": "reachable",
-    "pi": "not started",
-    "ollama_base_url": "http://localhost:11434"
-  }
-}
-```
-
-### ℹ️ Expected Lazy-Start Behavior (Not a Bug)
-- **Initial State**: `pi_subprocess: false` (`"not started"`). The Node.js Pi agent subprocess is intentionally **lazy-loaded** to minimize idle memory usage and avoid unnecessary process spawning on startup.
-- **Transition**: The moment the first chat message is sent (`POST /sessions/{id}/messages`), `pi_client.py` automatically initializes and spawns the persistent Node.js subprocess.
-- **Active State**: Subsequent calls to `GET /health` will report `pi_subprocess: true` (`"running"`) and `status: "ok"`.
-
----
-
-## 🧪 PRD Success Criteria Scenario Testing Matrix
-
-| Scenario | Requirement | Observed Empirical Result | Status |
-|---|---|---|---|
-| **1. Grounded Q&A** | Fresh session -> Ask grounded question -> Verify citations | Assistant retrieves vector chunks via `search_transcripts`, grounding answer strictly in transcript excerpts and citing guest & episode. | ✅ PASS |
-| **2. Ship30 Essay** | Ask for Ship30for30 reformat -> Verify ~1250 words, hook, bullets, takeaway | Agent invokes `generate_ship30_essay` tool. Output contains a prominent hook, bolded/bulleted structure, and closing takeaway. | ✅ PASS |
-| **3. Markdown Artifact** | Ask for markdown artifact -> Verify side-by-side rendering | Fires `artifact_created` SSE event. `ArtifactViewer.vue` panel auto-expands and renders GFM markdown via `marked.js` in Preview tab. | ✅ PASS |
-| **4. HTML Artifact Sandbox** | Ask for HTML snippet artifact -> Verify sandboxed iframe | Renders inside `<iframe :srcdoc="..." sandbox="allow-scripts">`. Confirmed strict security boundary preventing parent DOM/cookie access. | ✅ PASS |
-| **5. Ollama Disconnection** | Switch to Ollama mid-session, stop server, send message | `messages.py` catches `PiRPCError`, yielding structured SSE event `{"type": "error", "message": "Local model unavailable — is ollama serve running?"}` without hanging or crashing. | ✅ PASS |
-| **6. Missing API Key** | Remove `OPENAI_API_KEY`, request cloud completion | `POST /sessions/{id}/messages` returns **HTTP 422 Unprocessable Entity** (`{"code": "missing_api_key", ...}`) *before* opening SSE stream. No raw stack traces shown. | ✅ PASS |
-| **7. Out-of-Corpus Query** | Ask question with no transcript match | System prompt rule enforces: *"If retrieval produces no relevant results, explicitly say so rather than guessing."* Agent explicitly responds that transcripts do not contain information on the topic. | ✅ PASS |
-| **8. Health State Transition** | `GET /health` shows `pi_subprocess: false` on boot $\rightarrow$ flips to `true` after 1 message | Verified lazy-start lifecycle: initial `/health` reports `"pi": "not started"`. Spawns on first turn, subsequent `/health` reports `"pi": "running"`. | ✅ PASS |
-
----
-
-## 🧪 Running Automated Tests
-
-Run the offline endpoint and scenario test suite from `backend/`:
+### 6. Ollama Setup (Local LLM)
 
 ```powershell
-cd backend
-.\venv\Scripts\python.exe -m pytest tests/test_prd_scenarios.py tests/test_endpoints.py -v
+# Pull the default model
+ollama pull llama3.1:8b
+
+# Start the Ollama service
+ollama serve
 ```
 
----
+**Windows CUDA Driver Issue**: If Ollama crashes with exit code `0xc0000409` and a CUDA "shared object initialization failed" error, this indicates a broken or incompatible NVIDIA driver. Force CPU-only inference by setting:
 
-## 🛠️ Troubleshooting & Known Limitations
-
-### Windows Event Loop & Subprocess Spawning (`python run.py`)
-- **Proactor Event Loop Required**: On Windows, `asyncio`'s default `SelectorEventLoop` does not support subprocess creation (`create_subprocess_exec`), raising `NotImplementedError` when attempting to spawn the Node.js Pi agent.
-- **Reloader Subprocess Boundary (`reload=False`)**: Uvicorn's `--reload` mode spawns worker processes in a separate subprocess that does not inherit process-local event loop policies set in module space. Therefore, `backend/run.py` explicitly sets `WindowsProactorEventLoopPolicy()` and launches Uvicorn with `reload=False`.
-- **Manual Restart**: On Windows, backend code edits require restarting `python run.py` manually.
-
-### Windows CUDA Driver Issues with Ollama
-On Windows machines with broken or incompatible CUDA drivers, Ollama may crash with exit code `0xc0000409` and a CUDA "shared object initialization failed" error. To resolve this, run Ollama in CPU-only mode by setting the `CUDA_VISIBLE_DEVICES` environment variable to `-1` as a persistent user environment variable.
-
-**Symptom:**
-- Ollama crashes immediately with exit code `0xc0000409`
-- Error message mentions CUDA "shared object initialization failed"
-
-**Solution (PowerShell):**
 ```powershell
 # Set CUDA_VISIBLE_DEVICES=-1 as a persistent user environment variable
 [System.Environment]::SetEnvironmentVariable('CUDA_VISIBLE_DEVICES', '-1', 'User')
 
-# Restart your terminal for the change to take effect
-# Then start Ollama normally
+# Restart your terminal for the change to take effect, then start Ollama
 ollama serve
 ```
 
-This forces Ollama to use CPU-only inference, avoiding CUDA driver compatibility issues while still providing full local LLM functionality.
+### 7. Run Data Ingestion
+
+Load the Lenny's Podcast transcripts into Supabase and generate embeddings:
+
+```powershell
+cd backend
+.\venv\Scripts\python.exe -m app.ingestion.run_ingestion
+```
+
+**Note**: This uses the local `sentence-transformers/all-MiniLM-L6-v2` model for embeddings. This single model is used for both cloud and local chat modes—a deliberate architectural decision to keep the local demo path fully offline and guarantee vector-space consistency.
+
+### 8. Start the Backend
+
+```powershell
+cd backend
+.\venv\Scripts\python.exe run.py
+```
+
+**Critical Windows Note**: You must use `python run.py` from inside the `backend/` directory, NOT `uvicorn app.main:app --reload`. On Windows, uvicorn's `--reload` spawns worker processes in a separate subprocess that does not inherit the parent's `WindowsProactorEventLoopPolicy`, which is required for the Pi RPC subprocess to spawn correctly. Using `--reload` will cause Pi subprocess spawning to fail with an unhelpful `NotImplementedError`.
+
+Since reload is disabled, code changes require manually restarting the backend (Ctrl+C, confirm clean shutdown, then restart).
+
+### 9. Start the Frontend
+
+```powershell
+cd frontend\vue-project
+npm install
+npm run dev
+```
+
+Open your browser at `http://localhost:5173/`.
+
+## Environment Variables Reference
+
+| Variable | Purpose | Required |
+|----------|---------|----------|
+| `SUPABASE_DB_URL` | Async Postgres connection string for Supabase | Yes |
+| `OPENAI_API_KEY` | OpenAI API key for cloud LLM path | Yes (for OpenAI provider) |
+| `ANTHROPIC_API_KEY` | Anthropic API key for cloud LLM path | Optional |
+| `OLLAMA_BASE_URL` | Base URL for Ollama's OpenAI-compatible API | Optional (defaults to `http://localhost:11434`) |
+| `OLLAMA_MODEL` | Default Ollama model to use | Optional (defaults to `llama3.1:8b`) |
+
+## Known Limitations
+
+### From PRD Scope (§5)
+
+- **No authentication/multi-user support**: This is a single-user local application by design per PRD scope.
+- **Session deletion is hard delete**: Sessions are permanently deleted (not soft deleted) by design decision, given assignment time constraints.
+- **Live re-ingestion not supported**: New transcripts cannot be ingested live from the source repo; this is out of scope for v1.
+
+### Discovered During Development
+
+- **Local model tool-calling reliability**: Ollama's tool-calling reliability is lower than cloud models for complex, multi-part artifact requests (e.g., full interactive HTML/JS tools). Grounded Q&A and simpler markdown artifacts are reliable, but complex generation is best-effort.
+- **Ollama single-chunk rendering**: Ollama responses render as a single chunk rather than token-by-token streamed, due to how the direct-integration tool-calling loop is structured in `app/ollama_agent.py`.
+- **Cloud/OpenAI streaming rendering issue**: Cloud/OpenAI chat responses may not render incrementally in the chat bubble during active streaming in some cases due to a frontend Vue reactivity issue affecting message_delta accumulation. The final content is always correctly persisted and viewable by reloading/reselecting the session. This is a known frontend rendering issue under active investigation (diagnostic logging present in `session.ts`).
+
+## Links
+
+- [ARCHITECTURE.md](ARCHITECTURE.md) — Authoritative system design and database schema
+- [PRD.md](PRD.md) — Product requirements and success criteria
+- [docs/design.md](docs/design.md) — UI/UX reasoning and design decisions
+- [agent-transcripts/](agent-transcripts/) — Logs from coding agents used during development

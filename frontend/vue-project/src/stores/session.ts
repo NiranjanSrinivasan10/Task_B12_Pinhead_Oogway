@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 
 export interface Message {
   id: string
+  serverId?: string  // Server-assigned message ID (separate from Vue key)
   session_id: string
   role: 'user' | 'assistant' | 'system'
   content: string
@@ -271,6 +272,8 @@ export const useSessionStore = defineStore('session', () => {
       isStreaming: true
     }
     session.messages.push(assistantMsg)
+    // Capture the reactive reference from the array (Vue wraps it in a Proxy)
+    const reactiveAssistantMsg = session.messages[session.messages.length - 1]!
     isStreaming.value = true
 
     try {
@@ -283,9 +286,9 @@ export const useSessionStore = defineStore('session', () => {
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}))
         const msg = errorData.detail?.message || errorData.detail || `HTTP ${res.status}`
-        assistantMsg.error = typeof msg === 'string' ? msg : JSON.stringify(msg)
-        assistantMsg.isStreaming = false
-        errorMessage.value = assistantMsg.error
+        reactiveAssistantMsg.error = typeof msg === 'string' ? msg : JSON.stringify(msg)
+        reactiveAssistantMsg.isStreaming = false
+        errorMessage.value = reactiveAssistantMsg.error
         return
       }
 
@@ -322,18 +325,32 @@ export const useSessionStore = defineStore('session', () => {
           if (currentData) {
             try {
               const parsed = JSON.parse(currentData)
+              console.log('[SSE] Event:', currentEvent, 'Data:', parsed)
+
+              // Log object reference check
+              const msgInArray = session.messages[session.messages.length - 1]
+              console.log('[SSE] reactiveAssistantMsg === msgInArray:', reactiveAssistantMsg === msgInArray, 'reactiveAssistantMsg id:', reactiveAssistantMsg.id, 'msgInArray id:', msgInArray?.id)
+
               if (currentEvent === 'message_delta') {
-                assistantMsg.content += parsed.content || ''
+                console.log('[SSE] message_delta BEFORE update - content length:', reactiveAssistantMsg.content.length, 'id:', reactiveAssistantMsg.id)
+                reactiveAssistantMsg.content += parsed.content || ''
+                console.log('[SSE] message_delta AFTER update - content length:', reactiveAssistantMsg.content.length, 'id:', reactiveAssistantMsg.id)
+                console.log('[SSE] msgInArray content length AFTER update:', msgInArray?.content?.length)
               } else if (currentEvent === 'artifact_created') {
                 // Map artifact_type to type for compatibility with Artifact interface
                 const artifact = { ...parsed, type: parsed.artifact_type || parsed.type }
                 addArtifact(artifact)
               } else if (currentEvent === 'error') {
                 errorMessage.value = parsed.message || 'Unknown error'
-                assistantMsg.error = parsed.message || 'Unknown error'
+                reactiveAssistantMsg.error = parsed.message || 'Unknown error'
               } else if (currentEvent === 'done') {
-                if (parsed.message_id) assistantMsg.id = parsed.message_id
-                if (parsed.skill_used) assistantMsg.skill_used = parsed.skill_used || null
+                console.log('[SSE] done event - BEFORE serverId assignment - current id:', reactiveAssistantMsg.id, 'new serverId:', parsed.message_id)
+                console.log('[SSE] done event - BEFORE serverId assignment - content length:', reactiveAssistantMsg.content.length)
+                console.log('[SSE] done event - BEFORE serverId assignment - msgInArray content length:', msgInArray?.content?.length)
+                // Store server ID separately to avoid Vue key swap issue
+                if (parsed.message_id) reactiveAssistantMsg.serverId = parsed.message_id
+                console.log('[SSE] done event - AFTER serverId assignment - current id:', reactiveAssistantMsg.id, 'serverId:', reactiveAssistantMsg.serverId, 'content length:', reactiveAssistantMsg.content.length)
+                if (parsed.skill_used) reactiveAssistantMsg.skill_used = parsed.skill_used || null
               }
             } catch (e) {
               console.warn('Failed to parse SSE payload:', currentData)
@@ -342,10 +359,10 @@ export const useSessionStore = defineStore('session', () => {
         }
       }
     } catch (err: any) {
-      assistantMsg.error = (err.message || 'Stream connection failed') as string | null
-      errorMessage.value = assistantMsg.error
+      reactiveAssistantMsg.error = (err.message || 'Stream connection failed') as string | null
+      errorMessage.value = reactiveAssistantMsg.error
     } finally {
-      assistantMsg.isStreaming = false
+      reactiveAssistantMsg.isStreaming = false
       isStreaming.value = false
     }
   }

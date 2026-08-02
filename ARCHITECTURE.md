@@ -157,7 +157,8 @@ backend branches based on the provider:
   (`search_transcripts`, `generate_ship30_essay`, `create_artifact`) as
   the Pi path. This bypasses the Pi RPC subprocess entirely because Pi's
   `getModel` function only supports built-in providers (fixed union type)
-  and does not support custom/arbitrary providers like Ollama.
+  and does not support custom/arbitrary providers like Ollama. The default
+  Ollama model is `llama3.1:8b` (configurable via `OLLAMA_MODEL` env var).
 
 The frontend exposes a simple dropdown in the session header
 (`GPT-4o-mini (cloud)` / `Llama 3.1 (local)`); selecting an option calls
